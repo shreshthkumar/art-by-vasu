@@ -18,6 +18,7 @@ collections:
             widget: list
             fields:
               - { label: ID, name: id, widget: number }
+              - { label: "Painting Image", name: image, widget: image, required: false, hint: "Upload a photo or paste an image URL" }
               - { label: Title, name: title, widget: string }
               - { label: Subtitle, name: subtitle, widget: string, default: "Original Painting" }
               - label: Collection

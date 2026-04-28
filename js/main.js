@@ -98,7 +98,9 @@ function renderCartItems() {
   cartItemsEl.innerHTML = cart.map(item => `
     <div class="cart-item" data-id="${item.id}">
       <div class="cart-item__img">
-        <div class="cart-item__img-bg" style="background:${item.gradient}"></div>
+        ${item.image
+            ? `<img src="${item.image}" alt="${item.title}" style="width:100%;height:100%;object-fit:cover;">`
+            : `<div class="cart-item__img-bg" style="background:${item.gradient}"></div>`}
       </div>
       <div class="cart-item__info">
         <div class="cart-item__name">${item.title}</div>

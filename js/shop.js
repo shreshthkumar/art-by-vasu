@@ -46,7 +46,9 @@ function buildPaintingCard(p) {
   return `
     <div class="painting-card ${!p.available ? 'painting-card--sold' : ''}" data-id="${p.id}">
       <div class="painting-card__image">
-        <div class="painting-card__img-bg" style="background:${p.gradient}"></div>
+        ${p.image
+          ? `<img src="${p.image}" alt="${p.title}" class="painting-card__img-photo">`
+          : `<div class="painting-card__img-bg" style="background:${p.gradient}"></div>`}
         <div class="painting-card__tags">${tags.join('')}</div>
       </div>
       <div class="painting-card__body">

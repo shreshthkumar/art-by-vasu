@@ -14,6 +14,7 @@
       "featured": true,
       "new": true,
       "inspiration": "Painted during the first weeks of spring, Ananda — Sanskrit for 'bliss' — radiates outward from a golden core through rings of burnt sienna and soft coral, finishing in deep midnight blue.",
+      "image": "",
       "gradient": "radial-gradient(circle at 50% 50%, #F4C97A 0%, #C4956A 25%, #8B4513 50%, #4A7C7E 75%, #1a3a3a 100%)"
     },
     {
@@ -30,6 +31,7 @@
       "featured": true,
       "new": false,
       "inspiration": "Shanti means peace. Cool teals and soft lavenders layer outward in perfect symmetry, evoking the stillness of a mountain lake at dawn.",
+      "image": "",
       "gradient": "radial-gradient(circle at 50% 50%, #e8f4f8 0%, #4A7C7E 30%, #6a5acd 60%, #2C2C2C 100%)"
     },
     {
@@ -46,6 +48,7 @@
       "featured": true,
       "new": false,
       "inspiration": "Named for the sun, Surya blazes in deep ochres and saffrons, a painting that commands a wall and fills a room with warmth.",
+      "image": "",
       "gradient": "radial-gradient(circle at 50% 50%, #fff3b0 0%, #e8a000 25%, #C4956A 55%, #8B4513 80%, #3d1c00 100%)"
     },
     {
@@ -62,6 +65,7 @@
       "featured": false,
       "new": false,
       "inspiration": "Chandra — the moon — rendered entirely in silvers and ivory whites on a deep charcoal ground. Sold, but I'd love to create something in a similar spirit.",
+      "image": "",
       "gradient": "radial-gradient(circle at 50% 50%, #ffffff 0%, #c8c8c8 30%, #888888 60%, #3a3a3a 85%, #1a1a1a 100%)"
     },
     {
@@ -78,6 +82,7 @@
       "featured": true,
       "new": true,
       "inspiration": "Dharani means 'she who holds'. Soft pinks and sage greens bloom outward like petals — created during a period of deep gratitude.",
+      "image": "",
       "gradient": "radial-gradient(circle at 50% 50%, #ffe4e8 0%, #e8a0b0 25%, #9db87a 55%, #4a6741 80%, #2a3d20 100%)"
     },
     {
@@ -94,6 +99,7 @@
       "featured": false,
       "new": false,
       "inspiration": "Akasha — ether, infinite space — is the largest in the Sacred Geometry collection. Deep indigos and ultramarines suggest a cosmos folded into perfect symmetry.",
+      "image": "",
       "gradient": "radial-gradient(circle at 50% 50%, #a8d8f0 0%, #4a7cc8 25%, #1a3a8c 55%, #0a1a4a 80%, #050d2a 100%)"
     },
     {
@@ -110,6 +116,7 @@
       "featured": false,
       "new": true,
       "inspiration": "A small but energetic piece — vibrant magentas and turmeric yellows radiate life force from a tight, intricate centre.",
+      "image": "",
       "gradient": "radial-gradient(circle at 50% 50%, #fff200 0%, #ff6b6b 35%, #c2185b 65%, #6a0036 100%)"
     },
     {
@@ -126,6 +133,7 @@
       "featured": false,
       "new": false,
       "inspiration": "Metta means loving kindness. Earthy terracottas and warm greens create a grounded, tender composition — perfect for a bedroom or meditation space.",
+      "image": "",
       "gradient": "radial-gradient(circle at 50% 50%, #f5e6d0 0%, #C4956A 30%, #7a9e6a 60%, #4a6b3a 85%, #2a3d1a 100%)"
     }
   ]
