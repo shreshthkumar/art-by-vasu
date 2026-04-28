@@ -21,6 +21,12 @@ collections:
             fields:
               - { label: ID, name: id, widget: number }
               - { label: "Painting Image", name: image, widget: image, required: false, hint: "Upload a photo or paste an image URL" }
+              - label: "Additional Gallery Images"
+                name: images
+                widget: list
+                required: false
+                hint: "Extra images shown in the product page carousel"
+                field: { label: Image, name: image, widget: image }
               - { label: Title, name: title, widget: string }
               - { label: Subtitle, name: subtitle, widget: string, default: "Original Painting" }
               - label: Collection
@@ -84,6 +90,7 @@ collections:
           - { label: "Hero Eyebrow", name: hero_eyebrow, widget: string }
           - { label: "Hero Title", name: hero_title, widget: string }
           - { label: "Hero Subtitle", name: hero_subtitle, widget: text }
+          - { label: "Hero Image", name: hero_image, widget: image, required: false, hint: "Painting shown in the hero. Falls back to gradient if empty." }
           - label: "Value Strip Items"
             name: value_strip
             widget: list
@@ -110,6 +117,21 @@ collections:
           - { label: "Instagram Section Label", name: instagram_label, widget: string }
           - { label: "Instagram Section Heading", name: instagram_heading, widget: string }
           - { label: "Instagram Section Subtitle", name: instagram_subtitle, widget: string }
+          - label: "Studio Gallery"
+            name: studio_gallery
+            widget: list
+            required: false
+            hint: "Images and videos shown in the Studio section grid"
+            fields:
+              - label: Type
+                name: type
+                widget: select
+                options:
+                  - { label: Image, value: image }
+                  - { label: Video, value: video }
+              - { label: "URL (image path or video embed URL)", name: url, widget: string }
+              - { label: "Thumbnail (for videos)", name: thumbnail, widget: image, required: false }
+              - { label: Caption, name: caption, widget: string, required: false }
           - { label: "Newsletter Heading", name: newsletter_heading, widget: string }
           - { label: "Newsletter Subtitle", name: newsletter_subtitle, widget: text }
 

@@ -43,16 +43,18 @@ function buildPaintingCard(p) {
     ? `<button class="btn btn-teal painting-card__btn" onclick="handleAddToCart(${p.id})">Add to Cart</button>`
     : `<button class="btn btn-outline-teal painting-card__btn" onclick="showToast('Commission something similar →')">Commission Similar</button>`;
 
+  const imgEl = p.image
+    ? `<img src="${p.image}" alt="${p.title}" class="painting-card__img-photo">`
+    : `<div class="painting-card__img-bg" style="background:${p.gradient}"></div>`;
+
   return `
     <div class="painting-card ${!p.available ? 'painting-card--sold' : ''}" data-id="${p.id}">
       <div class="painting-card__image">
-        ${p.image
-          ? `<img src="${p.image}" alt="${p.title}" class="painting-card__img-photo">`
-          : `<div class="painting-card__img-bg" style="background:${p.gradient}"></div>`}
+        <a href="painting.html?id=${p.id}" class="painting-card__link">${imgEl}</a>
         <div class="painting-card__tags">${tags.join('')}</div>
       </div>
       <div class="painting-card__body">
-        <div class="painting-card__title">${p.title}</div>
+        <a href="painting.html?id=${p.id}" class="painting-card__title-link">${p.title}</a>
         <div class="painting-card__meta">${p.size} · ${p.medium}</div>
         <div class="painting-card__inspiration">${p.inspiration}</div>
         <div class="painting-card__footer">
