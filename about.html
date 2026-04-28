@@ -69,7 +69,7 @@
           <p id="story-p2">What started as a personal ritual became something I couldn't stop sharing. Friends and family began noticing the paintings on my walls. Then came requests. Then commissions. And slowly — a studio practice.</p>
           <p id="story-p3">Today, every painting I make carries that same original intention: to create something that gives the viewer a moment of genuine stillness in a world that rarely slows down.</p>
         </div>
-        <div class="about-photo">
+        <div class="about-photo" id="story-photo-wrap">
           <div class="about-photo-placeholder">
             <span>[ Your photo here ]</span>
             <span style="font-size:0.75rem;opacity:0.6">Replace with your studio portrait</span>
@@ -96,9 +96,9 @@
         <p class="section-header__label">The Process</p>
         <h2>From Intention to Canvas</h2>
         <div class="divider divider--center"></div>
-        <p class="text-muted">Each painting takes between 20 and 60 hours across several sessions. Here's how it unfolds.</p>
+        <p class="text-muted" id="process-subtitle">Each painting takes between 20 and 60 hours across several sessions. Here's how it unfolds.</p>
       </div>
-      <div class="process-steps">
+      <div class="process-steps" id="process-cards">
         <div class="process-card">
           <div class="process-card__icon">◯</div>
           <h3>The Centre Point</h3>
@@ -132,7 +132,7 @@
   <section class="section about-facts">
     <div class="container">
       <h2>A Few Things About Me</h2>
-      <div class="facts-grid">
+      <div class="facts-grid" id="facts-grid">
         <div class="fact-item">
           <div class="fact-item__label">Based in</div>
           <div class="fact-item__value">India</div>
@@ -153,12 +153,6 @@
           <div class="fact-item__label">What always inspires me</div>
           <div class="fact-item__value">Sacred geometry in nature</div>
         </div>
-        <div class="fact-item">
-          <div class="fact-item__label">Follow the studio</div>
-          <div class="fact-item__value">
-            <a href="https://www.instagram.com/art.vasu/" target="_blank" rel="noopener" style="color:var(--terra)">@art.vasu</a>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -166,10 +160,10 @@
   <!-- ─── CTA ───────────────────────────────────────────────── -->
   <section class="section text-center" style="background:var(--bg-soft)">
     <div class="container">
-      <p class="section-header__label">Ready to find yours?</p>
-      <h2>Explore the Collection</h2>
+      <p class="section-header__label" id="cta-label">Ready to find yours?</p>
+      <h2 id="cta-heading">Explore the Collection</h2>
       <div class="divider divider--center"></div>
-      <p class="text-muted">Every painting is one-of-a-kind. Once it's gone, it's gone.</p>
+      <p class="text-muted" id="cta-subtitle">Every painting is one-of-a-kind. Once it's gone, it's gone.</p>
       <div style="display:flex;gap:1rem;justify-content:center;margin-top:2rem;flex-wrap:wrap">
         <a href="shop.html" class="btn btn-primary">Shop Original Art</a>
         <a href="contact.html" class="btn btn-secondary">Commission a Piece</a>
@@ -237,16 +231,45 @@
 </aside>
 
 <script src="js/main.js"></script>
+<script src="js/cms-loader.js"></script>
 <script>
-  fetch('data/about.json')
-    .then(r => r.json())
-    .then(d => {
-      document.getElementById('about-tagline').textContent = d.tagline;
-      document.getElementById('story-p1').textContent      = d.story_p1;
-      document.getElementById('story-p2').textContent      = d.story_p2;
-      document.getElementById('story-p3').textContent      = d.story_p3;
-      document.getElementById('about-quote').textContent   = '"' + d.quote + '"';
-    });
+  fetch('data/about.json').then(r => r.json()).then(d => {
+    // Hero & story
+    document.getElementById('about-tagline').textContent = d.tagline;
+    document.getElementById('story-p1').textContent      = d.story_p1;
+    document.getElementById('story-p2').textContent      = d.story_p2;
+    document.getElementById('story-p3').textContent      = d.story_p3;
+    document.getElementById('about-quote').textContent   = '\u201c' + d.quote + '\u201d';
+    // Story photo
+    if (d.story_photo) {
+      document.getElementById('story-photo-wrap').innerHTML =
+        `<img src="${d.story_photo}" alt="Studio portrait" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg)">`;
+    }
+    // Process
+    document.getElementById('process-subtitle').textContent = d.process_subtitle;
+    if (d.process_cards) {
+      document.getElementById('process-cards').innerHTML =
+        d.process_cards.map(c => `
+          <div class="process-card">
+            <div class="process-card__icon">${c.icon}</div>
+            <h3>${c.title}</h3>
+            <p>${c.text}</p>
+          </div>`).join('');
+    }
+    // Facts
+    if (d.facts) {
+      document.getElementById('facts-grid').innerHTML =
+        d.facts.map(f => `
+          <div class="fact-item">
+            <div class="fact-item__label">${f.label}</div>
+            <div class="fact-item__value">${f.value}</div>
+          </div>`).join('');
+    }
+    // CTA
+    document.getElementById('cta-label').textContent   = d.cta_label;
+    document.getElementById('cta-heading').textContent = d.cta_heading;
+    document.getElementById('cta-subtitle').textContent = d.cta_subtitle;
+  });
 </script>
 </body>
 </html>

@@ -6,6 +6,8 @@ media_folder: images
 public_folder: /images
 
 collections:
+
+  # ─── PAINTINGS ────────────────────────────────────────────────
   - name: paintings
     label: Paintings
     files:
@@ -57,26 +59,119 @@ collections:
                   - monochrome
                   - multi-colour
 
+  # ─── PAGES ────────────────────────────────────────────────────
   - name: pages
     label: Pages
     files:
+
+      # SITE-WIDE
+      - label: Site Settings
+        name: site
+        file: data/site.json
+        fields:
+          - { label: Brand Name, name: brand_name, widget: string }
+          - { label: Footer Tagline, name: footer_tagline, widget: string }
+          - { label: Footer Copyright, name: footer_copyright, widget: string }
+          - { label: Footer Credit, name: footer_credit, widget: string }
+          - { label: Instagram URL, name: instagram_url, widget: string }
+          - { label: Instagram Handle, name: instagram_handle, widget: string }
+
+      # HOME PAGE
       - label: Home Page
         name: home
         file: data/home.json
         fields:
-          - { label: "Hero Eyebrow Text", name: hero_eyebrow, widget: string }
+          - { label: "Hero Eyebrow", name: hero_eyebrow, widget: string }
           - { label: "Hero Title", name: hero_title, widget: string }
           - { label: "Hero Subtitle", name: hero_subtitle, widget: text }
+          - label: "Value Strip Items"
+            name: value_strip
+            widget: list
+            field: { label: Item, name: item, widget: string }
+          - { label: "Featured Section Label", name: featured_label, widget: string }
+          - { label: "Featured Section Heading", name: featured_heading, widget: string }
           - { label: "About Section Heading", name: about_heading, widget: string }
           - { label: "About Section Paragraph 1", name: about_body_1, widget: text }
           - { label: "About Section Paragraph 2", name: about_body_2, widget: text }
+          - { label: "About Photo", name: about_photo, widget: image, required: false }
+          - label: "Process Steps"
+            name: process_steps
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+          - label: "Testimonials"
+            name: testimonials
+            widget: list
+            fields:
+              - { label: Quote, name: text, widget: text }
+              - { label: Author Name, name: author, widget: string }
+              - { label: Location, name: location, widget: string }
+          - { label: "Instagram Section Label", name: instagram_label, widget: string }
+          - { label: "Instagram Section Heading", name: instagram_heading, widget: string }
+          - { label: "Instagram Section Subtitle", name: instagram_subtitle, widget: string }
+          - { label: "Newsletter Heading", name: newsletter_heading, widget: string }
+          - { label: "Newsletter Subtitle", name: newsletter_subtitle, widget: text }
 
+      # ABOUT PAGE
       - label: About Page
         name: about
         file: data/about.json
         fields:
-          - { label: "Artist Tagline (below name)", name: tagline, widget: text }
+          - { label: "Artist Tagline", name: tagline, widget: text }
           - { label: "Story Paragraph 1", name: story_p1, widget: text }
           - { label: "Story Paragraph 2", name: story_p2, widget: text }
           - { label: "Story Paragraph 3", name: story_p3, widget: text }
+          - { label: "Story / Studio Photo", name: story_photo, widget: image, required: false }
           - { label: "Quote", name: quote, widget: text }
+          - { label: "Process Section Subtitle", name: process_subtitle, widget: text }
+          - label: "Process Cards"
+            name: process_cards
+            widget: list
+            fields:
+              - { label: Icon (symbol), name: icon, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+          - label: "Facts"
+            name: facts
+            widget: list
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: Value, name: value, widget: string }
+          - { label: "CTA Label", name: cta_label, widget: string }
+          - { label: "CTA Heading", name: cta_heading, widget: string }
+          - { label: "CTA Subtitle", name: cta_subtitle, widget: text }
+
+      # SHOP PAGE
+      - label: Shop Page
+        name: shop
+        file: data/shop.json
+        fields:
+          - { label: "Hero Label", name: hero_label, widget: string }
+          - { label: "Hero Title", name: hero_title, widget: string }
+          - { label: "Hero Subtitle", name: hero_subtitle, widget: text }
+          - { label: "Commission CTA Label", name: commission_label, widget: string }
+          - { label: "Commission CTA Heading", name: commission_heading, widget: string }
+          - { label: "Commission CTA Text", name: commission_text, widget: text }
+
+      # CONTACT PAGE
+      - label: Contact Page
+        name: contact
+        file: data/contact.json
+        fields:
+          - { label: "Hero Label", name: hero_label, widget: string }
+          - { label: "Hero Title", name: hero_title, widget: string }
+          - { label: "Hero Subtitle", name: hero_subtitle, widget: text }
+          - { label: "Form Heading", name: form_heading, widget: string }
+          - { label: "Form Intro", name: form_intro, widget: string }
+          - { label: "Email Address", name: contact_email, widget: string }
+          - { label: "Response Time", name: response_time, widget: string }
+          - { label: "Commission Status", name: commission_status, widget: string }
+          - { label: "Shipping Info", name: shipping_info, widget: string }
+          - { label: "Commission Quote", name: commission_quote, widget: text }
+          - label: "FAQ Items"
+            name: faq
+            widget: list
+            fields:
+              - { label: Question, name: question, widget: string }
+              - { label: Answer, name: answer, widget: text }

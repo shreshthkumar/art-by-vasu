@@ -2,7 +2,52 @@
   "hero_eyebrow": "Original · Handpainted · One of a Kind",
   "hero_title": "Where Every Circle Tells a Story",
   "hero_subtitle": "Hand-painted folk and mandala art crafted with intention — for walls, for minds, for moments of stillness.",
+  "value_strip": [
+    "Handpainted Originals",
+    "One-of-a-Kind",
+    "Ships Worldwide",
+    "Custom Commissions Welcome"
+  ],
+  "featured_label": "New & Featured",
+  "featured_heading": "From the Studio",
   "about_heading": "Made With Intention",
   "about_body_1": "Each painting begins as an intention — whether the radial precision of a mandala or the vibrant storytelling of folk art. Every piece is created entirely by hand, layer by layer, using fine brushes and an instinct shaped by years of practice.",
-  "about_body_2": "No two are ever alike. Whether you're drawn to the meditative calm of cool blues or the energy of warm ochres, you'll find something here that speaks to you."
+  "about_body_2": "No two are ever alike. Whether you're drawn to the meditative calm of cool blues or the energy of warm ochres, you'll find something here that speaks to you.",
+  "about_photo": "",
+  "process_steps": [
+    {
+      "title": "Intention",
+      "text": "Every painting begins with a purpose — a feeling, a word, an energy to channel into the work."
+    },
+    {
+      "title": "Creation",
+      "text": "Hours of patient brushwork, layer by layer, dot by dot, building outward from a still centre."
+    },
+    {
+      "title": "Delivery",
+      "text": "Sealed, wrapped in tissue, and boxed with care — ready to transform your space."
+    }
+  ],
+  "testimonials": [
+    {
+      "text": "The painting arrived beautifully packaged. It now hangs above my meditation corner and completely transforms the energy of the room. Worth every penny.",
+      "author": "Priya S.",
+      "location": "London, UK"
+    },
+    {
+      "text": "I commissioned a custom piece and the whole experience was wonderful. The communication was thoughtful and the result was beyond what I imagined.",
+      "author": "Daniel M.",
+      "location": "Amsterdam, NL"
+    },
+    {
+      "text": "Bought this as a gift — my mother was moved to tears. The detail up close is extraordinary. You can feel the care that went into every single stroke.",
+      "author": "Anaya R.",
+      "location": "Toronto, CA"
+    }
+  ],
+  "instagram_label": "Follow the Journey",
+  "instagram_heading": "From the Studio",
+  "instagram_subtitle": "Process videos, new work, and behind-the-scenes moments.",
+  "newsletter_heading": "Join the Circle",
+  "newsletter_subtitle": "New paintings, first access to limited works, and notes from the studio — straight to your inbox."
 }

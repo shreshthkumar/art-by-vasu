@@ -3,5 +3,44 @@
   "story_p1": "I didn't set out to paint. I found my way to it during a period of stillness — a time when I needed something to hold my attention and quiet my mind. The first mandala I drew was small, imperfect, and entirely mine. Folk art came later, through a deep curiosity about the stories and symbols passed down through generations. That's when I understood what painting really is: a practice in patience, memory, and surrender.",
   "story_p2": "What started as a personal ritual became something I couldn't stop sharing. Friends and family began noticing the paintings on my walls. Then came requests. Then commissions. And slowly — a studio practice.",
   "story_p3": "Today, every painting I make carries that same original intention: to create something that gives the viewer a moment of genuine stillness in a world that rarely slows down.",
-  "quote": "A painting is never truly finished on its own — it completes itself in the space it inhabits, and in the eye of the person who meets it."
+  "story_photo": "",
+  "quote": "A painting is never truly finished on its own — it completes itself in the space it inhabits, and in the eye of the person who meets it.",
+  "process_subtitle": "Each painting takes between 20 and 60 hours across several sessions. Here's how it unfolds.",
+  "process_cards": [
+    {
+      "icon": "◯",
+      "title": "The Centre Point",
+      "text": "Every mandala begins with a single dot — the origin from which all structure radiates. Folk pieces begin with a story or symbol. In both cases, I spend time in stillness before touching the canvas."
+    },
+    {
+      "icon": "△",
+      "title": "Geometric Foundation",
+      "text": "For mandalas, a compass, ruler, and protractor form the invisible skeleton. For folk paintings, traditional motifs and freehand linework set the foundation."
+    },
+    {
+      "icon": "◈",
+      "title": "Colour Layering",
+      "text": "Colour is added in layers — sometimes light to dark, sometimes the reverse — building depth and luminosity over multiple sessions."
+    },
+    {
+      "icon": "✦",
+      "title": "Detail Work",
+      "text": "The finest brushes (size 000 and 00000) create dots, petals, and linework. This is the most meditative phase — slow, repetitive, deeply satisfying."
+    },
+    {
+      "icon": "◇",
+      "title": "Sealing",
+      "text": "Each finished painting is sealed with a protective varnish — UV-resistant, satin finish — to preserve colour vibrancy for decades."
+    }
+  ],
+  "facts": [
+    { "label": "Based in", "value": "India" },
+    { "label": "Years painting", "value": "5+ years" },
+    { "label": "Favourite colour to work with", "value": "Deep teal & burnt sienna" },
+    { "label": "Studio soundtrack", "value": "Ambient, Indian classical music" },
+    { "label": "What always inspires me", "value": "Sacred geometry in nature" }
+  ],
+  "cta_label": "Ready to find yours?",
+  "cta_heading": "Explore the Collection",
+  "cta_subtitle": "Every painting is one-of-a-kind. Once it's gone, it's gone."
 }

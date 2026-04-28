@@ -65,7 +65,7 @@
   <!-- ─── VALUE STRIP ─────────────────────────────────────────── -->
   <div class="value-strip">
     <div class="container">
-      <div class="value-strip__inner">
+      <div class="value-strip__inner" id="value-strip-inner">
         <div class="value-item"><div class="value-item__dot"></div>Handpainted Originals</div>
         <div class="value-item"><div class="value-item__dot"></div>One-of-a-Kind</div>
         <div class="value-item"><div class="value-item__dot"></div>Ships Worldwide</div>
@@ -79,8 +79,8 @@
     <div class="container">
       <div class="section-header">
         <div class="section-header__left">
-          <p class="section-header__label">New &amp; Featured</p>
-          <h2>From the Studio</h2>
+          <p class="section-header__label" id="featured-label">New &amp; Featured</p>
+          <h2 id="featured-heading">From the Studio</h2>
           <div class="divider"></div>
         </div>
         <a href="shop.html" class="btn btn-secondary">View All Paintings</a>
@@ -96,7 +96,7 @@
   <section class="section about-snippet">
     <div class="container">
       <div class="about-snippet__inner">
-        <div class="about-snippet__image">
+        <div class="about-snippet__image" id="about-photo-wrap">
           <div class="about-snippet__img-placeholder">
             [ Your photo here ]
           </div>
@@ -118,7 +118,7 @@
   <!-- ─── PROCESS STRIP ───────────────────────────────────────── -->
   <section class="section--tight process-strip">
     <div class="container">
-      <div class="process-strip__inner">
+      <div class="process-strip__inner" id="process-strip-inner">
         <div class="process-step">
           <div class="process-step__number">01</div>
           <h3>Intention</h3>
@@ -142,10 +142,10 @@
   <section class="section instagram-strip">
     <div class="container">
       <div class="section-header text-center">
-        <p class="section-header__label">Follow the Journey</p>
-        <h2>From the Studio</h2>
+        <p class="section-header__label" id="instagram-label">Follow the Journey</p>
+        <h2 id="instagram-heading">From the Studio</h2>
         <div class="divider divider--center"></div>
-        <p class="text-muted">Process videos, new work, and behind-the-scenes moments.</p>
+        <p class="text-muted" id="instagram-subtitle">Process videos, new work, and behind-the-scenes moments.</p>
       </div>
       <div class="instagram-grid" id="instagram-grid">
         <!-- Rendered by JS -->
@@ -166,7 +166,7 @@
         <h2>Words from Collectors</h2>
         <div class="divider divider--center"></div>
       </div>
-      <div class="testimonials-grid">
+      <div class="testimonials-grid" id="testimonials-grid">
         <div class="testimonial">
           <div class="testimonial__stars">★★★★★</div>
           <p class="testimonial__text">The painting arrived beautifully packaged. It now hangs above my meditation corner and completely transforms the energy of the room. Worth every penny.</p>
@@ -193,9 +193,9 @@
   <section class="section--tight newsletter">
     <div class="container">
       <p class="section-header__label" style="color:rgba(255,255,255,0.7)">Stay Connected</p>
-      <h2>Join the Circle</h2>
+      <h2 id="newsletter-heading">Join the Circle</h2>
       <div class="divider"></div>
-      <p>New paintings, first access to limited works, and notes from the studio — straight to your inbox.</p>
+      <p id="newsletter-subtitle">New paintings, first access to limited works, and notes from the studio — straight to your inbox.</p>
       <form class="newsletter__form">
         <input type="email" class="newsletter__input" placeholder="your@email.com" required>
         <button type="submit" class="newsletter__btn">Subscribe</button>
@@ -266,6 +266,7 @@
 </aside>
 
 <script src="js/main.js"></script>
+<script src="js/cms-loader.js"></script>
 <script>
   // Load featured paintings on homepage
   async function loadFeatured() {
@@ -330,16 +331,56 @@
   });
 </script>
 <script>
-  fetch('data/home.json')
-    .then(r => r.json())
-    .then(d => {
-      document.getElementById('hero-eyebrow').textContent  = d.hero_eyebrow;
-      document.getElementById('hero-title').textContent    = d.hero_title;
-      document.getElementById('hero-subtitle').textContent = d.hero_subtitle;
-      document.getElementById('about-heading').textContent = d.about_heading;
-      document.getElementById('about-body-1').textContent  = d.about_body_1;
-      document.getElementById('about-body-2').textContent  = d.about_body_2;
-    });
+  fetch('data/home.json').then(r => r.json()).then(d => {
+    // Hero
+    document.getElementById('hero-eyebrow').textContent  = d.hero_eyebrow;
+    document.getElementById('hero-title').textContent    = d.hero_title;
+    document.getElementById('hero-subtitle').textContent = d.hero_subtitle;
+    // Value strip
+    if (d.value_strip) {
+      document.getElementById('value-strip-inner').innerHTML =
+        d.value_strip.map(item => `<div class="value-item"><div class="value-item__dot"></div>${item}</div>`).join('');
+    }
+    // Featured section header
+    document.getElementById('featured-label').textContent   = d.featured_label;
+    document.getElementById('featured-heading').textContent = d.featured_heading;
+    // About snippet
+    document.getElementById('about-heading').textContent = d.about_heading;
+    document.getElementById('about-body-1').textContent  = d.about_body_1;
+    document.getElementById('about-body-2').textContent  = d.about_body_2;
+    if (d.about_photo) {
+      document.getElementById('about-photo-wrap').innerHTML =
+        `<img src="${d.about_photo}" alt="The Artist" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg)">`;
+    }
+    // Process strip
+    if (d.process_steps) {
+      document.getElementById('process-strip-inner').innerHTML =
+        d.process_steps.map((s, i) => `
+          <div class="process-step">
+            <div class="process-step__number">${String(i + 1).padStart(2, '0')}</div>
+            <h3>${s.title}</h3>
+            <p>${s.text}</p>
+          </div>`).join('');
+    }
+    // Instagram section
+    document.getElementById('instagram-label').textContent    = d.instagram_label;
+    document.getElementById('instagram-heading').textContent  = d.instagram_heading;
+    document.getElementById('instagram-subtitle').textContent = d.instagram_subtitle;
+    // Testimonials
+    if (d.testimonials) {
+      document.getElementById('testimonials-grid').innerHTML =
+        d.testimonials.map(t => `
+          <div class="testimonial">
+            <div class="testimonial__stars">★★★★★</div>
+            <p class="testimonial__text">${t.text}</p>
+            <div class="testimonial__author">${t.author}</div>
+            <div class="testimonial__location">${t.location}</div>
+          </div>`).join('');
+    }
+    // Newsletter
+    document.getElementById('newsletter-heading').textContent  = d.newsletter_heading;
+    document.getElementById('newsletter-subtitle').textContent = d.newsletter_subtitle;
+  });
 </script>
 <script>
   if (window.netlifyIdentity) {

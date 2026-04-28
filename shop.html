@@ -46,10 +46,10 @@
   <!-- ─── SHOP HERO ─────────────────────────────────────────── -->
   <section class="shop-hero">
     <div class="container">
-      <p class="section-header__label">The Collection</p>
-      <h1>Original Folk & Mandala Paintings</h1>
+      <p class="section-header__label" id="shop-hero-label">The Collection</p>
+      <h1 id="shop-hero-title">Original Folk & Mandala Paintings</h1>
       <div class="divider divider--center"></div>
-      <p>Every piece is a one-of-a-kind original. Painted by hand. Shipped with care.</p>
+      <p id="shop-hero-subtitle">Every piece is a one-of-a-kind original. Painted by hand. Shipped with care.</p>
     </div>
   </section>
 
@@ -120,10 +120,10 @@
   <!-- ─── COMMISSION CTA ─────────────────────────────────────── -->
   <section class="section--tight newsletter">
     <div class="container text-center">
-      <p class="section-header__label" style="color:rgba(255,255,255,0.7)">Can't find what you're looking for?</p>
-      <h2>Commission a Custom Piece</h2>
+      <p class="section-header__label" style="color:rgba(255,255,255,0.7)" id="commission-label">Can't find what you're looking for?</p>
+      <h2 id="commission-heading">Commission a Custom Piece</h2>
       <div class="divider divider--center"></div>
-      <p style="margin-inline:auto">Tell me your colours, your intention, your space — and I'll create something entirely yours.</p>
+      <p style="margin-inline:auto" id="commission-text">Tell me your colours, your intention, your space — and I'll create something entirely yours.</p>
       <a href="contact.html" class="btn btn-secondary" style="margin-top:2rem;border-color:rgba(255,255,255,0.5);color:white">Get in Touch</a>
     </div>
   </section>
@@ -190,5 +190,16 @@
 
 <script src="js/main.js"></script>
 <script src="js/shop.js"></script>
+<script src="js/cms-loader.js"></script>
+<script>
+  fetch('data/shop.json').then(r => r.json()).then(d => {
+    document.getElementById('shop-hero-label').textContent   = d.hero_label;
+    document.getElementById('shop-hero-title').textContent   = d.hero_title;
+    document.getElementById('shop-hero-subtitle').textContent = d.hero_subtitle;
+    document.getElementById('commission-label').textContent   = d.commission_label;
+    document.getElementById('commission-heading').textContent = d.commission_heading;
+    document.getElementById('commission-text').textContent    = d.commission_text;
+  });
+</script>
 </body>
 </html>

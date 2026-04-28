@@ -46,10 +46,10 @@
   <!-- ─── CONTACT HERO ──────────────────────────────────────── -->
   <section class="contact-hero">
     <div class="container">
-      <p class="section-header__label">Say Hello</p>
-      <h1>Get in Touch</h1>
+      <p class="section-header__label" id="contact-hero-label">Say Hello</p>
+      <h1 id="contact-hero-title">Get in Touch</h1>
       <div class="divider divider--center"></div>
-      <p class="text-muted" style="max-width:50ch;margin-inline:auto">For commissions, wholesale enquiries, or just to say you love what you see — I'd love to hear from you.</p>
+      <p class="text-muted" id="contact-hero-subtitle" style="max-width:50ch;margin-inline:auto">For commissions, wholesale enquiries, or just to say you love what you see — I'd love to hear from you.</p>
     </div>
   </section>
 
@@ -60,8 +60,8 @@
 
         <!-- Form -->
         <div class="contact-form-section">
-          <h2>Send a Message</h2>
-          <p>I reply to all messages within 48 hours.</p>
+          <h2 id="form-heading">Send a Message</h2>
+          <p id="form-intro">I reply to all messages within 48 hours.</p>
           <form id="contact-form" novalidate>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
               <div class="form-group">
@@ -104,7 +104,7 @@
             <div class="contact-detail__icon">✉</div>
             <div class="contact-detail__text">
               <strong>Email</strong>
-              <span>hello@artbyvasu.com</span>
+              <span id="contact-email">hello@artbyvasu.com</span>
             </div>
           </div>
 
@@ -112,7 +112,7 @@
             <div class="contact-detail__icon">◷</div>
             <div class="contact-detail__text">
               <strong>Response Time</strong>
-              <span>Within 48 hours, usually sooner</span>
+              <span id="response-time">Within 48 hours, usually sooner</span>
             </div>
           </div>
 
@@ -120,7 +120,7 @@
             <div class="contact-detail__icon">◈</div>
             <div class="contact-detail__text">
               <strong>Custom Commissions</strong>
-              <span>Open · 4–6 week lead time · 50% deposit to begin</span>
+              <span id="commission-status">Open · 4–6 week lead time · 50% deposit to begin</span>
             </div>
           </div>
 
@@ -128,7 +128,7 @@
             <div class="contact-detail__icon">⬡</div>
             <div class="contact-detail__text">
               <strong>Shipping</strong>
-              <span>Worldwide · Carefully packed · Tracked</span>
+              <span id="shipping-info">Worldwide · Carefully packed · Tracked</span>
             </div>
           </div>
 
@@ -141,7 +141,7 @@
 
           <div style="margin-top:2rem;padding:1.5rem;background:var(--bg-soft);border-radius:var(--radius-lg)">
             <p style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;line-height:1.5;color:var(--text)">
-              "Interested in a bespoke piece for your home or as a gift? I'd love to hear your vision."
+              <span id="commission-quote">Interested in a bespoke piece for your home or as a gift? I'd love to hear your vision.</span>
             </p>
           </div>
         </div>
@@ -159,110 +159,12 @@
         <div class="divider divider--center"></div>
       </div>
 
-      <div class="faq-grid">
-
-        <!-- Purchasing -->
+      <div class="faq-grid" id="faq-grid">
+        <!-- Rendered by JS from data/contact.json -->
         <div class="faq-item">
-          <button class="faq-question">
-            Are your paintings originals?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">Yes — every painting is a one-of-a-kind, hand-painted original on canvas. No prints, no reproductions. Each is marked on the reverse with the title, date, and my signature.</div>
-          </div>
+          <button class="faq-question">Are your paintings originals?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Yes — every painting is a one-of-a-kind, hand-painted original on canvas. No prints, no reproductions. Each is marked on the reverse with the title, date, and my signature.</div></div>
         </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            Do you offer prints?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">Not currently — I believe the original carries something a print cannot. That said, if demand is there, I may offer limited giclée prints in the future. Join the newsletter to be the first to know.</div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            Can I commission a custom piece?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">Absolutely. Get in touch with your preferred size, colour palette, and any intention or meaning you'd like the piece to carry. A 50% deposit is required before work begins, with the balance due before shipping. Lead time is typically 4–6 weeks.</div>
-          </div>
-        </div>
-
-        <!-- Shipping -->
-        <div class="faq-item">
-          <button class="faq-question">
-            Where do you ship?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">Worldwide. I've sent paintings to the UK, Europe, North America, Australia, and beyond. Shipping costs are calculated at checkout based on destination and painting size.</div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            How long does shipping take?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">Paintings are dispatched within 5–7 days of purchase. Estimated delivery: India (3–5 days), UK/Europe (7–14 days), International (10–21 days). All shipments are tracked and insured.</div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            How are the paintings packaged?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">Each canvas is wrapped in acid-free tissue, surrounded by bubble wrap, and boxed in a rigid outer box with corner protection. I've never had a painting arrive damaged.</div>
-          </div>
-        </div>
-
-        <!-- Returns -->
-        <div class="faq-item">
-          <button class="faq-question">
-            What is your returns policy?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">Because each painting is a one-of-a-kind original, I'm unable to accept returns simply due to a change of mind. However, if your painting arrives damaged, please photograph the packaging and the painting and contact me within 48 hours — I'll make it right.</div>
-          </div>
-        </div>
-
-        <!-- Care -->
-        <div class="faq-item">
-          <button class="faq-question">
-            How do I care for my painting?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              <ul style="list-style:disc;padding-left:1.25rem;display:flex;flex-direction:column;gap:0.4rem">
-                <li>Hang away from direct sunlight — UV can fade pigments over time</li>
-                <li>Avoid damp environments (bathrooms, etc.)</li>
-                <li>Dust gently with a soft, dry cloth — never wet</li>
-                <li>Do not use cleaning products on the canvas surface</li>
-                <li>The varnish seal is UV-resistant and protects the surface</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            Does the painting come ready to hang?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">Yes — all stretched canvases have a hanging fixture on the reverse and can be displayed immediately. The canvas sides are also painted, so no frame is required, though one can be added if preferred.</div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
@@ -328,28 +230,51 @@
 </aside>
 
 <script src="js/main.js"></script>
+<script src="js/cms-loader.js"></script>
 <script>
-  // FAQ accordion
-  document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item');
-      const isOpen = item.classList.contains('open');
-      // Close all
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      // Open clicked if it was closed
-      if (!isOpen) item.classList.add('open');
+  function initFaqAccordion() {
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
     });
+  }
+
+  fetch('data/contact.json').then(r => r.json()).then(d => {
+    // Hero
+    document.getElementById('contact-hero-label').textContent    = d.hero_label;
+    document.getElementById('contact-hero-title').textContent    = d.hero_title;
+    document.getElementById('contact-hero-subtitle').textContent = d.hero_subtitle;
+    // Form
+    document.getElementById('form-heading').textContent = d.form_heading;
+    document.getElementById('form-intro').textContent   = d.form_intro;
+    // Contact info
+    document.getElementById('contact-email').textContent     = d.contact_email;
+    document.getElementById('response-time').textContent     = d.response_time;
+    document.getElementById('commission-status').textContent = d.commission_status;
+    document.getElementById('shipping-info').textContent     = d.shipping_info;
+    document.getElementById('commission-quote').textContent  = d.commission_quote;
+    // FAQ — render then re-init accordion
+    if (d.faq) {
+      document.getElementById('faq-grid').innerHTML =
+        d.faq.map(item => `
+          <div class="faq-item">
+            <button class="faq-question">${item.question}<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">${item.answer}</div></div>
+          </div>`).join('');
+      initFaqAccordion();
+    }
   });
 
   // Contact form
   document.getElementById('contact-form')?.addEventListener('submit', e => {
     e.preventDefault();
     const email = document.getElementById('email').value;
-    const name = document.getElementById('first-name').value;
-    if (!email || !name) {
-      showToast('Please fill in your name and email.');
-      return;
-    }
+    const name  = document.getElementById('first-name').value;
+    if (!email || !name) { showToast('Please fill in your name and email.'); return; }
     showToast(`Thank you, ${name}! I'll be in touch within 48 hours.`);
     e.target.reset();
   });

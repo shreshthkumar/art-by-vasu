@@ -1,0 +1,50 @@
+{
+  "hero_label": "Say Hello",
+  "hero_title": "Get in Touch",
+  "hero_subtitle": "For commissions, wholesale enquiries, or just to say you love what you see — I'd love to hear from you.",
+  "form_heading": "Send a Message",
+  "form_intro": "I reply to all messages within 48 hours.",
+  "contact_email": "hello@artbyvasu.com",
+  "response_time": "Within 48 hours, usually sooner",
+  "commission_status": "Open · 4–6 week lead time · 50% deposit to begin",
+  "shipping_info": "Worldwide · Carefully packed · Tracked",
+  "commission_quote": "Interested in a bespoke piece for your home or as a gift? I'd love to hear your vision.",
+  "faq": [
+    {
+      "question": "Are your paintings originals?",
+      "answer": "Yes — every painting is a one-of-a-kind, hand-painted original on canvas. No prints, no reproductions. Each is marked on the reverse with the title, date, and my signature."
+    },
+    {
+      "question": "Do you offer prints?",
+      "answer": "Not currently — I believe the original carries something a print cannot. That said, if demand is there, I may offer limited giclée prints in the future. Join the newsletter to be the first to know."
+    },
+    {
+      "question": "Can I commission a custom piece?",
+      "answer": "Absolutely. Get in touch with your preferred size, colour palette, and any intention or meaning you'd like the piece to carry. A 50% deposit is required before work begins, with the balance due before shipping. Lead time is typically 4–6 weeks."
+    },
+    {
+      "question": "Where do you ship?",
+      "answer": "Worldwide. I've sent paintings to the UK, Europe, North America, Australia, and beyond. Shipping costs are calculated at checkout based on destination and painting size."
+    },
+    {
+      "question": "How long does shipping take?",
+      "answer": "Paintings are dispatched within 5–7 days of purchase. Estimated delivery: India (3–5 days), UK/Europe (7–14 days), International (10–21 days). All shipments are tracked and insured."
+    },
+    {
+      "question": "How are the paintings packaged?",
+      "answer": "Each canvas is wrapped in acid-free tissue, surrounded by bubble wrap, and boxed in a rigid outer box with corner protection. I've never had a painting arrive damaged."
+    },
+    {
+      "question": "What is your returns policy?",
+      "answer": "Because each painting is a one-of-a-kind original, I'm unable to accept returns simply due to a change of mind. However, if your painting arrives damaged, please photograph the packaging and the painting and contact me within 48 hours — I'll make it right."
+    },
+    {
+      "question": "How do I care for my painting?",
+      "answer": "Hang away from direct sunlight — UV can fade pigments over time. Avoid damp environments. Dust gently with a soft, dry cloth — never wet. Do not use cleaning products on the canvas surface. The varnish seal is UV-resistant and protects the surface."
+    },
+    {
+      "question": "Does the painting come ready to hang?",
+      "answer": "Yes — all stretched canvases have a hanging fixture on the reverse and can be displayed immediately. The canvas sides are also painted, so no frame is required, though one can be added if preferred."
+    }
+  ]
+}
