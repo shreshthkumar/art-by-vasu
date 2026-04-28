@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop — Art by Vasu</title>
+  <meta name="description" content="Browse original hand-painted mandala canvas paintings. Filter by collection, size, and colour. One-of-a-kind works that ship worldwide.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ─── NAVIGATION ─────────────────────────────────────────── -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">Art <span>by Vasu</span></a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav__actions">
+      <button class="nav__cart-btn">
+        <span>Cart</span>
+        <span class="cart-count" data-count="0">0</span>
+      </button>
+      <button class="nav__burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="nav__mobile">
+  <a href="index.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="page-content">
+
+  <!-- ─── SHOP HERO ─────────────────────────────────────────── -->
+  <section class="shop-hero">
+    <div class="container">
+      <p class="section-header__label">The Collection</p>
+      <h1>Original Mandala Paintings</h1>
+      <div class="divider divider--center"></div>
+      <p>Every piece is a one-of-a-kind original. Painted by hand. Shipped with care.</p>
+    </div>
+  </section>
+
+  <!-- ─── FILTERS ───────────────────────────────────────────── -->
+  <div class="shop-filters">
+    <div class="container">
+      <div class="shop-filters__inner">
+
+        <div class="filter-group">
+          <span class="filter-label">Collection</span>
+          <select class="filter-select" data-filter="collection">
+            <option value="all">All</option>
+            <!-- Populated by JS -->
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <span class="filter-label">Size</span>
+          <select class="filter-select" data-filter="size">
+            <option value="all">Any Size</option>
+            <option value="small">Small (≤30cm)</option>
+            <option value="medium">Medium (40–50cm)</option>
+            <option value="large">Large (60cm+)</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <span class="filter-label">Colour</span>
+          <select class="filter-select" data-filter="color">
+            <option value="all">Any Colour</option>
+            <option value="warm">Warm Tones</option>
+            <option value="cool">Cool Tones</option>
+            <option value="monochrome">Monochrome</option>
+            <option value="multi-colour">Multi-Colour</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <span class="filter-label">Availability</span>
+          <button class="filter-btn active" data-availability="all">All</button>
+          <button class="filter-btn" data-availability="available">Available</button>
+          <button class="filter-btn" data-availability="sold">Sold</button>
+        </div>
+
+        <div class="shop-filters__sort">
+          <span class="filter-label">Sort</span>
+          <select class="sort-select">
+            <option value="newest">Newest First</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+          </select>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SHOP GRID ──────────────────────────────────────────── -->
+  <section class="shop-grid-section">
+    <div class="container">
+      <p class="shop-results-count">Loading…</p>
+      <div class="paintings-grid shop-paintings-grid">
+        <!-- Rendered by shop.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── COMMISSION CTA ─────────────────────────────────────── -->
+  <section class="section--tight newsletter">
+    <div class="container text-center">
+      <p class="section-header__label" style="color:rgba(255,255,255,0.7)">Can't find what you're looking for?</p>
+      <h2>Commission a Custom Piece</h2>
+      <div class="divider divider--center"></div>
+      <p style="margin-inline:auto">Tell me your colours, your intention, your space — and I'll create something entirely yours.</p>
+      <a href="contact.html" class="btn btn-secondary" style="margin-top:2rem;border-color:rgba(255,255,255,0.5);color:white">Get in Touch</a>
+    </div>
+  </section>
+
+</div>
+
+<!-- ─── FOOTER ───────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__brand-name">Art <span>by Vasu</span></div>
+        <p class="footer__tagline">Original mandala paintings, made with intention.</p>
+        <div class="footer__socials">
+          <a href="https://www.instagram.com/art.vasu/" target="_blank" rel="noopener" class="footer__social-link">Instagram</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop All</a></li>
+          <li><a href="about.html">About the Artist</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Info</h4>
+        <ul>
+          <li><a href="contact.html">Custom Commissions</a></li>
+          <li><a href="contact.html#faq">Shipping Info</a></li>
+          <li><a href="contact.html#faq">Returns Policy</a></li>
+          <li><a href="contact.html#faq">Care Instructions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Art by Vasu. All rights reserved.</span>
+      <span>Handpainted with love.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── CART SIDEBAR ─────────────────────────────────────────── -->
+<div class="cart-overlay"></div>
+<aside class="cart-sidebar">
+  <div class="cart-sidebar__header">
+    <h2 class="cart-sidebar__title">Your Cart</h2>
+    <button class="cart-close-btn">✕</button>
+  </div>
+  <div class="cart-items"></div>
+  <div class="cart-sidebar__footer">
+    <div class="cart-subtotal"><span>Subtotal</span><span>£0</span></div>
+    <div class="cart-total">
+      <span class="cart-total__label">Total</span>
+      <span class="cart-total__amount">£0</span>
+    </div>
+    <button class="btn btn-teal cart-checkout-btn" onclick="showToast('Connect a payment provider (Stripe/PayPal) to enable checkout.')">
+      Proceed to Checkout
+    </button>
+    <p class="cart-note">Shipping calculated at checkout · Secure payment</p>
+  </div>
+</aside>
+
+<script src="js/main.js"></script>
+<script src="js/shop.js"></script>
+</body>
+</html>

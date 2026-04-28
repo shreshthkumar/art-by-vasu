@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art by Vasu — Hand-Painted Mandala Canvas Art</title>
+  <meta name="description" content="Original hand-painted mandala canvas paintings by Vasu. One-of-a-kind art for your home. Ships worldwide.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ─── NAVIGATION ─────────────────────────────────────────── -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">Art <span>by Vasu</span></a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav__actions">
+      <button class="nav__cart-btn">
+        <span>Cart</span>
+        <span class="cart-count" data-count="0">0</span>
+      </button>
+      <button class="nav__burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile nav -->
+<div class="nav__mobile">
+  <a href="index.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <button class="btn btn-teal" style="margin-top:1rem" onclick="document.querySelector('.nav__mobile').classList.remove('open');document.querySelector('.nav__cart-btn').click()">View Cart</button>
+</div>
+
+<div class="page-content">
+
+  <!-- ─── HERO ───────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero__text">
+      <p class="hero__eyebrow">Original · Handpainted · One of a Kind</p>
+      <h1 class="hero__title">Where Every Circle Tells a Story</h1>
+      <p class="hero__subtitle">Hand-painted mandala canvas art crafted with intention — for walls, for minds, for moments of stillness.</p>
+      <div class="hero__ctas">
+        <a href="shop.html" class="btn btn-primary">Explore the Collection</a>
+        <a href="about.html" class="btn btn-secondary">Meet the Artist</a>
+      </div>
+    </div>
+    <div class="hero__image">
+      <div class="hero__painting"></div>
+    </div>
+  </section>
+
+  <!-- ─── VALUE STRIP ─────────────────────────────────────────── -->
+  <div class="value-strip">
+    <div class="container">
+      <div class="value-strip__inner">
+        <div class="value-item"><div class="value-item__dot"></div>Handpainted Originals</div>
+        <div class="value-item"><div class="value-item__dot"></div>One-of-a-Kind</div>
+        <div class="value-item"><div class="value-item__dot"></div>Ships Worldwide</div>
+        <div class="value-item"><div class="value-item__dot"></div>Custom Commissions Welcome</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── FEATURED PAINTINGS ──────────────────────────────────── -->
+  <section class="section featured">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header__left">
+          <p class="section-header__label">New &amp; Featured</p>
+          <h2>From the Studio</h2>
+          <div class="divider"></div>
+        </div>
+        <a href="shop.html" class="btn btn-secondary">View All Paintings</a>
+      </div>
+      <div class="paintings-grid" id="featured-grid">
+        <!-- Rendered by JS -->
+        <div style="color:var(--text-muted);font-size:0.9rem;padding:2rem 0;">Loading paintings…</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ABOUT SNIPPET ────────────────────────────────────────── -->
+  <section class="section about-snippet">
+    <div class="container">
+      <div class="about-snippet__inner">
+        <div class="about-snippet__image">
+          <div class="about-snippet__img-placeholder">
+            [ Your photo here ]
+          </div>
+        </div>
+        <div class="about-snippet__text">
+          <div class="section-header">
+            <p class="section-header__label">The Artist</p>
+            <h2>Made With Intention</h2>
+            <div class="divider"></div>
+          </div>
+          <p>Each mandala begins as a single point — and from there, an entire universe unfolds. My paintings are created entirely by hand, layer by layer, using fine brushes and an instinct shaped by years of practice.</p>
+          <p>No two are ever alike. Whether you're drawn to the meditative calm of cool blues or the energy of warm ochres, you'll find something here that speaks to you.</p>
+          <a href="about.html" class="btn btn-primary">My Story</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROCESS STRIP ───────────────────────────────────────── -->
+  <section class="section--tight process-strip">
+    <div class="container">
+      <div class="process-strip__inner">
+        <div class="process-step">
+          <div class="process-step__number">01</div>
+          <h3>Intention</h3>
+          <p>Every painting begins with a purpose — a feeling, a word, an energy to channel into the work.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step__number">02</div>
+          <h3>Creation</h3>
+          <p>Hours of patient brushwork, layer by layer, dot by dot, building outward from a still centre.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step__number">03</div>
+          <h3>Delivery</h3>
+          <p>Sealed, wrapped in tissue, and boxed with care — ready to transform your space.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── INSTAGRAM STRIP ──────────────────────────────────────── -->
+  <section class="section instagram-strip">
+    <div class="container">
+      <div class="section-header text-center">
+        <p class="section-header__label">Follow the Journey</p>
+        <h2>From the Studio</h2>
+        <div class="divider divider--center"></div>
+        <p class="text-muted">Process videos, new work, and behind-the-scenes moments.</p>
+      </div>
+      <div class="instagram-grid" id="instagram-grid">
+        <!-- Rendered by JS -->
+      </div>
+      <div class="instagram-strip__cta">
+        <a href="https://www.instagram.com/art.vasu/" target="_blank" rel="noopener" class="btn btn-secondary">
+          Follow <span class="instagram-strip__handle">@art.vasu</span> on Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TESTIMONIALS ─────────────────────────────────────────── -->
+  <section class="section testimonials">
+    <div class="container">
+      <div class="section-header text-center">
+        <p class="section-header__label">What People Say</p>
+        <h2>Words from Collectors</h2>
+        <div class="divider divider--center"></div>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial">
+          <div class="testimonial__stars">★★★★★</div>
+          <p class="testimonial__text">The painting arrived beautifully packaged. It now hangs above my meditation corner and completely transforms the energy of the room. Worth every penny.</p>
+          <div class="testimonial__author">Priya S.</div>
+          <div class="testimonial__location">London, UK</div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial__stars">★★★★★</div>
+          <p class="testimonial__text">I commissioned a custom piece and the whole experience was wonderful. The communication was thoughtful and the result was beyond what I imagined.</p>
+          <div class="testimonial__author">Daniel M.</div>
+          <div class="testimonial__location">Amsterdam, NL</div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial__stars">★★★★★</div>
+          <p class="testimonial__text">Bought this as a gift — my mother was moved to tears. The detail up close is extraordinary. You can feel the care that went into every single stroke.</p>
+          <div class="testimonial__author">Anaya R.</div>
+          <div class="testimonial__location">Toronto, CA</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── NEWSLETTER ───────────────────────────────────────────── -->
+  <section class="section--tight newsletter">
+    <div class="container">
+      <p class="section-header__label" style="color:rgba(255,255,255,0.7)">Stay Connected</p>
+      <h2>Join the Circle</h2>
+      <div class="divider"></div>
+      <p>New paintings, first access to limited works, and notes from the studio — straight to your inbox.</p>
+      <form class="newsletter__form">
+        <input type="email" class="newsletter__input" placeholder="your@email.com" required>
+        <button type="submit" class="newsletter__btn">Subscribe</button>
+      </form>
+      <p class="newsletter__note">No spam, ever. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+</div><!-- /page-content -->
+
+<!-- ─── FOOTER ───────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__brand-name">Art <span>by Vasu</span></div>
+        <p class="footer__tagline">Original mandala paintings, made with intention.</p>
+        <div class="footer__socials">
+          <a href="https://www.instagram.com/art.vasu/" target="_blank" rel="noopener" class="footer__social-link">Instagram</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop All</a></li>
+          <li><a href="about.html">About the Artist</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html#faq">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Info</h4>
+        <ul>
+          <li><a href="contact.html">Custom Commissions</a></li>
+          <li><a href="contact.html#faq">Shipping Info</a></li>
+          <li><a href="contact.html#faq">Returns Policy</a></li>
+          <li><a href="contact.html#faq">Care Instructions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Art by Vasu. All rights reserved.</span>
+      <span>Handpainted with love.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── CART SIDEBAR ─────────────────────────────────────────── -->
+<div class="cart-overlay"></div>
+<aside class="cart-sidebar">
+  <div class="cart-sidebar__header">
+    <h2 class="cart-sidebar__title">Your Cart</h2>
+    <button class="cart-close-btn">✕</button>
+  </div>
+  <div class="cart-items"></div>
+  <div class="cart-sidebar__footer">
+    <div class="cart-subtotal"><span>Subtotal</span><span>£0</span></div>
+    <div class="cart-total">
+      <span class="cart-total__label">Total</span>
+      <span class="cart-total__amount">£0</span>
+    </div>
+    <button class="btn btn-teal cart-checkout-btn" onclick="showToast('Connect a payment provider (Stripe/PayPal) to enable checkout.')">
+      Proceed to Checkout
+    </button>
+    <p class="cart-note">Shipping calculated at checkout · Secure payment</p>
+  </div>
+</aside>
+
+<script src="js/main.js"></script>
+<script>
+  // Load featured paintings on homepage
+  async function loadFeatured() {
+    try {
+      const res = await fetch('data/paintings.json');
+      const data = await res.json();
+      const featured = data.paintings.filter(p => p.featured).slice(0, 4);
+      const grid = document.getElementById('featured-grid');
+
+      grid.innerHTML = featured.map(p => {
+        const tags = [];
+        if (p.new && p.available) tags.push(`<span class="tag tag--new">New</span>`);
+        if (!p.available) tags.push(`<span class="tag tag--sold">Sold</span>`);
+        tags.push(`<span class="tag tag--collection">${p.collection}</span>`);
+
+        const cartBtn = p.available
+          ? `<button class="btn btn-teal painting-card__btn" onclick="addToCart(${JSON.stringify(p).replace(/"/g,'&quot;')})">Add to Cart</button>`
+          : `<button class="btn btn-outline-teal painting-card__btn" onclick="showToast('Commission something similar →')">Commission Similar</button>`;
+
+        return `
+          <div class="painting-card ${!p.available ? 'painting-card--sold' : ''}">
+            <div class="painting-card__image">
+              <div class="painting-card__img-bg" style="background:${p.gradient}"></div>
+              <div class="painting-card__tags">${tags.join('')}</div>
+            </div>
+            <div class="painting-card__body">
+              <div class="painting-card__title">${p.title}</div>
+              <div class="painting-card__meta">${p.size} · ${p.medium}</div>
+              <div class="painting-card__inspiration">${p.inspiration}</div>
+              <div class="painting-card__footer">
+                <div class="painting-card__price">£${p.price}</div>
+                ${cartBtn}
+              </div>
+            </div>
+          </div>`;
+      }).join('');
+    } catch(e) {
+      document.getElementById('featured-grid').innerHTML = '<p style="color:var(--text-muted)">Unable to load paintings.</p>';
+    }
+  }
+
+  // Instagram placeholder grid
+  function renderInstagramPlaceholders() {
+    const gradients = [
+      'radial-gradient(circle, #F4C97A, #C4956A, #4A7C7E)',
+      'radial-gradient(circle, #e8f4f8, #4A7C7E, #2C2C2C)',
+      'radial-gradient(circle, #fff3b0, #e8a000, #8B4513)',
+      'radial-gradient(circle, #ffe4e8, #e8a0b0, #4a6741)',
+      'radial-gradient(circle, #a8d8f0, #4a7cc8, #0a1a4a)',
+    ];
+    const grid = document.getElementById('instagram-grid');
+    if (!grid) return;
+    grid.innerHTML = gradients.map(g => `
+      <a href="https://www.instagram.com/art.vasu/" target="_blank" rel="noopener" class="instagram-item">
+        <div class="instagram-item__bg" style="background:${g}"></div>
+      </a>`).join('');
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadFeatured();
+    renderInstagramPlaceholders();
+  });
+</script>
+</body>
+</html>

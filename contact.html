@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & FAQ — Art by Vasu</title>
+  <meta name="description" content="Get in touch for commissions, enquiries, or orders. FAQ covering shipping, returns, and custom orders.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ─── NAVIGATION ─────────────────────────────────────────── -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">Art <span>by Vasu</span></a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav__actions">
+      <button class="nav__cart-btn">
+        <span>Cart</span>
+        <span class="cart-count" data-count="0">0</span>
+      </button>
+      <button class="nav__burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="nav__mobile">
+  <a href="index.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="page-content">
+
+  <!-- ─── CONTACT HERO ──────────────────────────────────────── -->
+  <section class="contact-hero">
+    <div class="container">
+      <p class="section-header__label">Say Hello</p>
+      <h1>Get in Touch</h1>
+      <div class="divider divider--center"></div>
+      <p class="text-muted" style="max-width:50ch;margin-inline:auto">For commissions, wholesale enquiries, or just to say you love what you see — I'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT LAYOUT ────────────────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Form -->
+        <div class="contact-form-section">
+          <h2>Send a Message</h2>
+          <p>I reply to all messages within 48 hours.</p>
+          <form id="contact-form" novalidate>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+              <div class="form-group">
+                <label class="form-label" for="first-name">First Name</label>
+                <input class="form-input" type="text" id="first-name" placeholder="Jane" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="last-name">Last Name</label>
+                <input class="form-input" type="text" id="last-name" placeholder="Smith">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address</label>
+              <input class="form-input" type="email" id="email" placeholder="jane@example.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="subject">What's this about?</label>
+              <select class="form-select" id="subject">
+                <option value="">Select a topic…</option>
+                <option value="general">General Enquiry</option>
+                <option value="commission">Custom Commission</option>
+                <option value="order">Order / Shipping Question</option>
+                <option value="wholesale">Wholesale / Gallery</option>
+                <option value="press">Press / Collaboration</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Message</label>
+              <textarea class="form-textarea" id="message" placeholder="Tell me about what you're looking for…" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Info -->
+        <div class="contact-info">
+          <h3>Other Ways to Connect</h3>
+
+          <div class="contact-detail">
+            <div class="contact-detail__icon">✉</div>
+            <div class="contact-detail__text">
+              <strong>Email</strong>
+              <span>hello@artbyvasu.com</span>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail__icon">◷</div>
+            <div class="contact-detail__text">
+              <strong>Response Time</strong>
+              <span>Within 48 hours, usually sooner</span>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail__icon">◈</div>
+            <div class="contact-detail__text">
+              <strong>Custom Commissions</strong>
+              <span>Open · 4–6 week lead time · 50% deposit to begin</span>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail__icon">⬡</div>
+            <div class="contact-detail__text">
+              <strong>Shipping</strong>
+              <span>Worldwide · Carefully packed · Tracked</span>
+            </div>
+          </div>
+
+          <div style="margin-top:1.5rem">
+            <p style="font-size:0.82rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.75rem">Follow the Studio</p>
+            <div class="contact-socials">
+              <a href="https://www.instagram.com/art.vasu/" target="_blank" rel="noopener" class="contact-social-btn">Instagram @art.vasu</a>
+            </div>
+          </div>
+
+          <div style="margin-top:2rem;padding:1.5rem;background:var(--bg-soft);border-radius:var(--radius-lg)">
+            <p style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;line-height:1.5;color:var(--text)">
+              "Interested in a bespoke piece for your home or as a gift? I'd love to hear your vision."
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ───────────────────────────────────────────────── -->
+  <section class="section faq-section" id="faq">
+    <div class="container">
+      <div class="section-header text-center">
+        <p class="section-header__label">Frequently Asked Questions</p>
+        <h2>Good Questions</h2>
+        <div class="divider divider--center"></div>
+      </div>
+
+      <div class="faq-grid">
+
+        <!-- Purchasing -->
+        <div class="faq-item">
+          <button class="faq-question">
+            Are your paintings originals?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Yes — every painting is a one-of-a-kind, hand-painted original on canvas. No prints, no reproductions. Each is marked on the reverse with the title, date, and my signature.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Do you offer prints?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Not currently — I believe the original carries something a print cannot. That said, if demand is there, I may offer limited giclée prints in the future. Join the newsletter to be the first to know.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I commission a custom piece?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Absolutely. Get in touch with your preferred size, colour palette, and any intention or meaning you'd like the piece to carry. A 50% deposit is required before work begins, with the balance due before shipping. Lead time is typically 4–6 weeks.</div>
+          </div>
+        </div>
+
+        <!-- Shipping -->
+        <div class="faq-item">
+          <button class="faq-question">
+            Where do you ship?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Worldwide. I've sent paintings to the UK, Europe, North America, Australia, and beyond. Shipping costs are calculated at checkout based on destination and painting size.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            How long does shipping take?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Paintings are dispatched within 5–7 days of purchase. Estimated delivery: India (3–5 days), UK/Europe (7–14 days), International (10–21 days). All shipments are tracked and insured.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            How are the paintings packaged?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Each canvas is wrapped in acid-free tissue, surrounded by bubble wrap, and boxed in a rigid outer box with corner protection. I've never had a painting arrive damaged.</div>
+          </div>
+        </div>
+
+        <!-- Returns -->
+        <div class="faq-item">
+          <button class="faq-question">
+            What is your returns policy?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Because each painting is a one-of-a-kind original, I'm unable to accept returns simply due to a change of mind. However, if your painting arrives damaged, please photograph the packaging and the painting and contact me within 48 hours — I'll make it right.</div>
+          </div>
+        </div>
+
+        <!-- Care -->
+        <div class="faq-item">
+          <button class="faq-question">
+            How do I care for my painting?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <ul style="list-style:disc;padding-left:1.25rem;display:flex;flex-direction:column;gap:0.4rem">
+                <li>Hang away from direct sunlight — UV can fade pigments over time</li>
+                <li>Avoid damp environments (bathrooms, etc.)</li>
+                <li>Dust gently with a soft, dry cloth — never wet</li>
+                <li>Do not use cleaning products on the canvas surface</li>
+                <li>The varnish seal is UV-resistant and protects the surface</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Does the painting come ready to hang?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Yes — all stretched canvases have a hanging fixture on the reverse and can be displayed immediately. The canvas sides are also painted, so no frame is required, though one can be added if preferred.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ─── FOOTER ───────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__brand-name">Art <span>by Vasu</span></div>
+        <p class="footer__tagline">Original mandala paintings, made with intention.</p>
+        <div class="footer__socials">
+          <a href="https://www.instagram.com/art.vasu/" target="_blank" rel="noopener" class="footer__social-link">Instagram</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop All</a></li>
+          <li><a href="about.html">About the Artist</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Info</h4>
+        <ul>
+          <li><a href="contact.html">Custom Commissions</a></li>
+          <li><a href="#faq">Shipping Info</a></li>
+          <li><a href="#faq">Returns Policy</a></li>
+          <li><a href="#faq">Care Instructions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Art by Vasu. All rights reserved.</span>
+      <span>Handpainted with love.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── CART SIDEBAR ─────────────────────────────────────────── -->
+<div class="cart-overlay"></div>
+<aside class="cart-sidebar">
+  <div class="cart-sidebar__header">
+    <h2 class="cart-sidebar__title">Your Cart</h2>
+    <button class="cart-close-btn">✕</button>
+  </div>
+  <div class="cart-items"></div>
+  <div class="cart-sidebar__footer">
+    <div class="cart-subtotal"><span>Subtotal</span><span>£0</span></div>
+    <div class="cart-total">
+      <span class="cart-total__label">Total</span>
+      <span class="cart-total__amount">£0</span>
+    </div>
+    <button class="btn btn-teal cart-checkout-btn" onclick="showToast('Connect a payment provider to enable checkout.')">
+      Proceed to Checkout
+    </button>
+    <p class="cart-note">Shipping calculated at checkout · Secure payment</p>
+  </div>
+</aside>
+
+<script src="js/main.js"></script>
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      // Open clicked if it was closed
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Contact form
+  document.getElementById('contact-form')?.addEventListener('submit', e => {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    const name = document.getElementById('first-name').value;
+    if (!email || !name) {
+      showToast('Please fill in your name and email.');
+      return;
+    }
+    showToast(`Thank you, ${name}! I'll be in touch within 48 hours.`);
+    e.target.reset();
+  });
+</script>
+</body>
+</html>
