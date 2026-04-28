@@ -6,7 +6,13 @@
   "about_body_1": "Each painting begins as an intention — whether the radial precision of a mandala or the vibrant storytelling of folk art. Every piece is created entirely by hand, layer by layer, using fine brushes and an instinct shaped by years of practice.",
   "instagram_label": "Follow the Journey",
   "about_body_2": "No two are ever alike. Whether you're drawn to the meditative calm of cool blues or the energy of warm ochres, you'll find something here that speaks to you.",
-  "studio_gallery": [],
+  "studio_gallery": [
+    {
+      "url": "https://www.instagram.com/reel/C0q_CKTottx/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      "thumbnail": "/images/insta_video_1.png",
+      "type": "video"
+    }
+  ],
   "value_strip": [
     "Handpainted Originals",
     "One-of-a-Kind",
