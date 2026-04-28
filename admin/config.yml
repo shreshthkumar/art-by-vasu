@@ -19,7 +19,7 @@ collections:
             fields:
               - { label: ID, name: id, widget: number }
               - { label: Title, name: title, widget: string }
-              - { label: Subtitle, name: subtitle, widget: string, default: "Original Mandala Painting" }
+              - { label: Subtitle, name: subtitle, widget: string, default: "Original Painting" }
               - label: Collection
                 name: collection
                 widget: select
@@ -28,6 +28,9 @@ collections:
                   - Sacred Geometry
                   - Earth Tones
                   - Floral Mandalas
+                  - Folk Art
+                  - Folk Traditions
+                  - Nature & Wildlife
               - { label: "Size (e.g. 50 × 50 cm)", name: size, widget: string }
               - label: Size Category
                 name: sizeCategory
