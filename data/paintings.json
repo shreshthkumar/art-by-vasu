@@ -36,7 +36,7 @@
       "subtitle": "Original Mandala Painting",
       "title": "Shanti",
       "id": 2,
-      "image": "",
+      "image": "/images/mandala_red.png",
       "collection": "Sacred Geometry",
       "sizeCategory": "medium"
     },
@@ -55,7 +55,7 @@
       "subtitle": "Original Mandala Painting",
       "title": "Surya",
       "id": 3,
-      "image": "",
+      "image": "/images/painiting_1.png",
       "collection": "Earth Tones",
       "sizeCategory": "large"
     },
@@ -74,7 +74,7 @@
       "subtitle": "Original Mandala Painting",
       "title": "Chandra",
       "id": 4,
-      "image": "",
+      "image": "/images/painting_2.png",
       "collection": "Celestial Series",
       "sizeCategory": "small"
     },
