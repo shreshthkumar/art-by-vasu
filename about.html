@@ -50,7 +50,7 @@
       <h1>About Vasu</h1>
       <div class="divider divider--center"></div>
       <p style="max-width:55ch;margin-inline:auto;color:rgba(255,255,255,0.7)">
-        Painter of folk and mandala art. Seeker of stillness. Believer that the right piece of art can change the energy of a room — and the person in it.
+        <span id="about-tagline">Painter of folk and mandala art. Seeker of stillness. Believer that the right piece of art can change the energy of a room — and the person in it.</span>
       </p>
     </div>
   </section>
@@ -65,9 +65,9 @@
             <h2>How It All Started</h2>
             <div class="divider"></div>
           </div>
-          <p>I didn't set out to paint. I found my way to it during a period of stillness — a time when I needed something to hold my attention and quiet my mind. The first mandala I drew was small, imperfect, and entirely mine. Folk art came later, through a deep curiosity about the stories and symbols passed down through generations. That's when I understood what painting really is: a practice in patience, memory, and surrender.</p>
-          <p>What started as a personal ritual became something I couldn't stop sharing. Friends and family began noticing the paintings on my walls. Then came requests. Then commissions. And slowly — a studio practice.</p>
-          <p>Today, every painting I make carries that same original intention: to create something that gives the viewer a moment of genuine stillness in a world that rarely slows down.</p>
+          <p id="story-p1">I didn't set out to paint. I found my way to it during a period of stillness — a time when I needed something to hold my attention and quiet my mind. The first mandala I drew was small, imperfect, and entirely mine. Folk art came later, through a deep curiosity about the stories and symbols passed down through generations. That's when I understood what painting really is: a practice in patience, memory, and surrender.</p>
+          <p id="story-p2">What started as a personal ritual became something I couldn't stop sharing. Friends and family began noticing the paintings on my walls. Then came requests. Then commissions. And slowly — a studio practice.</p>
+          <p id="story-p3">Today, every painting I make carries that same original intention: to create something that gives the viewer a moment of genuine stillness in a world that rarely slows down.</p>
         </div>
         <div class="about-photo">
           <div class="about-photo-placeholder">
@@ -83,7 +83,7 @@
   <section class="section about-philosophy">
     <div class="container">
       <blockquote>
-        "A painting is never truly finished on its own — it completes itself in the space it inhabits, and in the eye of the person who meets it."
+        <span id="about-quote">"A painting is never truly finished on its own — it completes itself in the space it inhabits, and in the eye of the person who meets it."</span>
         <cite>— Vasu</cite>
       </blockquote>
     </div>
@@ -237,5 +237,16 @@
 </aside>
 
 <script src="js/main.js"></script>
+<script>
+  fetch('data/about.json')
+    .then(r => r.json())
+    .then(d => {
+      document.getElementById('about-tagline').textContent = d.tagline;
+      document.getElementById('story-p1').textContent      = d.story_p1;
+      document.getElementById('story-p2').textContent      = d.story_p2;
+      document.getElementById('story-p3').textContent      = d.story_p3;
+      document.getElementById('about-quote').textContent   = '"' + d.quote + '"';
+    });
+</script>
 </body>
 </html>

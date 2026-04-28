@@ -49,9 +49,9 @@
   <!-- ─── HERO ───────────────────────────────────────────────── -->
   <section class="hero">
     <div class="hero__text">
-      <p class="hero__eyebrow">Original · Handpainted · One of a Kind</p>
-      <h1 class="hero__title">Where Every Circle Tells a Story</h1>
-      <p class="hero__subtitle">Hand-painted folk and mandala art crafted with intention — for walls, for minds, for moments of stillness.</p>
+      <p class="hero__eyebrow" id="hero-eyebrow">Original · Handpainted · One of a Kind</p>
+      <h1 class="hero__title" id="hero-title">Where Every Circle Tells a Story</h1>
+      <p class="hero__subtitle" id="hero-subtitle">Hand-painted folk and mandala art crafted with intention — for walls, for minds, for moments of stillness.</p>
       <div class="hero__ctas">
         <a href="shop.html" class="btn btn-primary">Explore the Collection</a>
         <a href="about.html" class="btn btn-secondary">Meet the Artist</a>
@@ -104,11 +104,11 @@
         <div class="about-snippet__text">
           <div class="section-header">
             <p class="section-header__label">The Artist</p>
-            <h2>Made With Intention</h2>
+            <h2 id="about-heading">Made With Intention</h2>
             <div class="divider"></div>
           </div>
-          <p>Each painting begins as an intention — whether the radial precision of a mandala or the vibrant storytelling of folk art. Every piece is created entirely by hand, layer by layer, using fine brushes and an instinct shaped by years of practice.</p>
-          <p>No two are ever alike. Whether you're drawn to the meditative calm of cool blues or the energy of warm ochres, you'll find something here that speaks to you.</p>
+          <p id="about-body-1">Each painting begins as an intention — whether the radial precision of a mandala or the vibrant storytelling of folk art. Every piece is created entirely by hand, layer by layer, using fine brushes and an instinct shaped by years of practice.</p>
+          <p id="about-body-2">No two are ever alike. Whether you're drawn to the meditative calm of cool blues or the energy of warm ochres, you'll find something here that speaks to you.</p>
           <a href="about.html" class="btn btn-primary">My Story</a>
         </div>
       </div>
@@ -328,6 +328,18 @@
     loadFeatured();
     renderInstagramPlaceholders();
   });
+</script>
+<script>
+  fetch('data/home.json')
+    .then(r => r.json())
+    .then(d => {
+      document.getElementById('hero-eyebrow').textContent  = d.hero_eyebrow;
+      document.getElementById('hero-title').textContent    = d.hero_title;
+      document.getElementById('hero-subtitle').textContent = d.hero_subtitle;
+      document.getElementById('about-heading').textContent = d.about_heading;
+      document.getElementById('about-body-1').textContent  = d.about_body_1;
+      document.getElementById('about-body-2').textContent  = d.about_body_2;
+    });
 </script>
 <script>
   if (window.netlifyIdentity) {

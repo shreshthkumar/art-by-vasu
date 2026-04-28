@@ -56,3 +56,27 @@ collections:
                   - cool
                   - monochrome
                   - multi-colour
+
+  - name: pages
+    label: Pages
+    files:
+      - label: Home Page
+        name: home
+        file: data/home.json
+        fields:
+          - { label: "Hero Eyebrow Text", name: hero_eyebrow, widget: string }
+          - { label: "Hero Title", name: hero_title, widget: string }
+          - { label: "Hero Subtitle", name: hero_subtitle, widget: text }
+          - { label: "About Section Heading", name: about_heading, widget: string }
+          - { label: "About Section Paragraph 1", name: about_body_1, widget: text }
+          - { label: "About Section Paragraph 2", name: about_body_2, widget: text }
+
+      - label: About Page
+        name: about
+        file: data/about.json
+        fields:
+          - { label: "Artist Tagline (below name)", name: tagline, widget: text }
+          - { label: "Story Paragraph 1", name: story_p1, widget: text }
+          - { label: "Story Paragraph 2", name: story_p2, widget: text }
+          - { label: "Story Paragraph 3", name: story_p3, widget: text }
+          - { label: "Quote", name: quote, widget: text }
