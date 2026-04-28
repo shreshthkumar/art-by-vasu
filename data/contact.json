@@ -1,14 +1,11 @@
 {
-  "hero_label": "Say Hello",
-  "hero_title": "Get in Touch",
-  "hero_subtitle": "For commissions, wholesale enquiries, or just to say you love what you see — I'd love to hear from you.",
-  "form_heading": "Send a Message",
-  "form_intro": "I reply to all messages within 48 hours.",
-  "contact_email": "hello@artbyvasu.com",
-  "response_time": "Within 48 hours, usually sooner",
   "commission_status": "Open · 4–6 week lead time · 50% deposit to begin",
-  "shipping_info": "Worldwide · Carefully packed · Tracked",
+  "form_heading": "Send a Message",
   "commission_quote": "Interested in a bespoke piece for your home or as a gift? I'd love to hear your vision.",
+  "response_time": "Within 48 hours, usually sooner",
+  "hero_label": "Say Hello",
+  "form_intro": "I reply to all messages within 48 hours.",
+  "hero_title": "Get in Touch",
   "faq": [
     {
       "question": "Are your paintings originals?",
@@ -46,5 +43,8 @@
       "question": "Does the painting come ready to hang?",
       "answer": "Yes — all stretched canvases have a hanging fixture on the reverse and can be displayed immediately. The canvas sides are also painted, so no frame is required, though one can be added if preferred."
     }
-  ]
+  ],
+  "hero_subtitle": "For commissions, wholesale enquiries, or just to say you love what you see — I'd love to hear from you.",
+  "contact_email": "hello@artvasu.com",
+  "shipping_info": "Worldwide · Carefully packed · Tracked"
 }
