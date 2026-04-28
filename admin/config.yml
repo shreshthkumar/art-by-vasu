@@ -1,0 +1,54 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: images
+public_folder: /images
+
+collections:
+  - name: paintings
+    label: Paintings
+    files:
+      - label: Paintings Collection
+        name: paintings
+        file: data/paintings.json
+        fields:
+          - label: Paintings
+            name: paintings
+            widget: list
+            fields:
+              - { label: ID, name: id, widget: number }
+              - { label: Title, name: title, widget: string }
+              - { label: Subtitle, name: subtitle, widget: string, default: "Original Mandala Painting" }
+              - label: Collection
+                name: collection
+                widget: select
+                options:
+                  - Celestial Series
+                  - Sacred Geometry
+                  - Earth Tones
+                  - Floral Mandalas
+              - { label: "Size (e.g. 50 × 50 cm)", name: size, widget: string }
+              - label: Size Category
+                name: sizeCategory
+                widget: select
+                options:
+                  - { label: "Small (up to 30cm)", value: small }
+                  - { label: "Medium (40–50cm)", value: medium }
+                  - { label: "Large (60cm+)", value: large }
+              - { label: Medium, name: medium, widget: string, default: "Acrylic on stretched canvas" }
+              - { label: "Price (£)", name: price, widget: number, value_type: int }
+              - { label: Available for Sale, name: available, widget: boolean, default: true }
+              - { label: Featured on Homepage, name: featured, widget: boolean, default: false }
+              - { label: New Arrival, name: new, widget: boolean, default: false }
+              - { label: Inspiration / Description, name: inspiration, widget: text }
+              - { label: "Gradient CSS (radial-gradient...)", name: gradient, widget: string }
+              - label: Colour Palette
+                name: colors
+                widget: select
+                multiple: true
+                options:
+                  - warm
+                  - cool
+                  - monochrome
+                  - multi-colour
