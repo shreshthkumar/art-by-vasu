@@ -619,7 +619,7 @@ p { max-width: 65ch; }
 .testimonial__location { font-size: 0.8rem; color: var(--text-muted); }
 
 /* ─── NEWSLETTER ─────────────────────────────────────────────── */
-.newsletter { background: var(--terra); color: var(--white); text-align: center; }
+.newsletter { background: var(--terra); color: var(--white); text-align: -webkit-center; }
 .newsletter h2, .newsletter p { color: var(--white); }
 .newsletter .divider { background: rgba(255,255,255,0.4); margin-inline: auto; }
 
