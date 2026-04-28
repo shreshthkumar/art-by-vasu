@@ -94,7 +94,7 @@
       "subtitle": "Original Mandala Painting",
       "title": "Dharani",
       "id": 5,
-      "image": "",
+      "image": "/images/pic_1.png",
       "collection": "Floral Mandalas",
       "sizeCategory": "medium"
     },
@@ -113,7 +113,7 @@
       "subtitle": "Original Mandala Painting",
       "title": "Akasha",
       "id": 6,
-      "image": "",
+      "image": "/images/pic_2.png",
       "collection": "Sacred Geometry",
       "sizeCategory": "large"
     },
@@ -133,7 +133,7 @@
       "subtitle": "Original Mandala Painting",
       "title": "Prana",
       "id": 7,
-      "image": "",
+      "image": "/images/pic_3.png",
       "collection": "Floral Mandalas",
       "sizeCategory": "small"
     },
@@ -153,7 +153,7 @@
       "subtitle": "Original Mandala Painting",
       "title": "Metta",
       "id": 8,
-      "image": "",
+      "image": "/images/pic_4.png",
       "collection": "Earth Tones",
       "sizeCategory": "medium"
     }
