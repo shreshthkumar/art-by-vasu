@@ -164,6 +164,171 @@
       "images": [],
       "collection": "Earth Tones",
       "sizeCategory": "medium"
+    },
+    {
+      "new": true,
+      "size": "20 × 70 cm",
+      "price": 165,
+      "available": true,
+      "inspiration": "Four sacred creatures — tortoise, peacock, owl, and elephant — each held within their own mandala medallion, stacked in a tall vertical scroll. A celebration of the animal world through the language of Madhubani folk art.",
+      "featured": true,
+      "colors": [
+        "warm",
+        "multi-colour"
+      ],
+      "gradient": "radial-gradient(circle at 50% 50%, #4a90d9 0%, #e8a000 35%, #2C2C2C 65%, #C4956A 100%)",
+      "medium": "Ink and acrylic on paper",
+      "subtitle": "Original Madhubani Painting",
+      "title": "Chatushpada",
+      "id": 9,
+      "image": "images/20260426_174331.jpg",
+      "images": [],
+      "collection": "Folk Traditions",
+      "sizeCategory": "large"
+    },
+    {
+      "new": false,
+      "size": "30 × 22 cm",
+      "price": 85,
+      "available": true,
+      "inspiration": "Aditya — the sun — painted in the bold lines of folk tradition. Fiery red and orange rays burst outward from a serene face set against an intricate black henna-work ground. Painted on paper, this piece carries the raw energy of an older practice.",
+      "featured": false,
+      "colors": [
+        "warm"
+      ],
+      "gradient": "radial-gradient(circle at 50% 50%, #F4C97A 0%, #e85000 40%, #1a1a1a 100%)",
+      "medium": "Ink and watercolour on paper",
+      "subtitle": "Original Folk Painting",
+      "title": "Aditya",
+      "id": 10,
+      "image": "images/IMG-20200327-WA0028.jpg",
+      "images": [],
+      "collection": "Folk Art",
+      "sizeCategory": "small"
+    },
+    {
+      "new": false,
+      "size": "120 × 40 cm",
+      "price": 420,
+      "available": true,
+      "inspiration": "Vivah — the sacred union. A long horizontal Madhubani panel depicting a wedding procession: women bearing gifts, musicians playing, and the bride seated beneath a ceremonial canopy, surrounded by flowering vines. One of the largest and most detailed works in the collection.",
+      "featured": true,
+      "colors": [
+        "multi-colour"
+      ],
+      "gradient": "radial-gradient(circle at 50% 50%, #e8f5e9 0%, #c8e6c9 30%, #8B4513 65%, #c2185b 100%)",
+      "medium": "Ink and acrylic on canvas",
+      "subtitle": "Original Madhubani Painting",
+      "title": "Vivah",
+      "id": 11,
+      "image": "images/IMG_0152.JPG",
+      "images": ["images/IMG_0163~2.JPG"],
+      "collection": "Folk Traditions",
+      "sizeCategory": "large"
+    },
+    {
+      "new": false,
+      "size": "20 × 15 cm",
+      "price": 65,
+      "available": true,
+      "inspiration": "Two peacocks face each other in perfect symmetry, tail feathers fanned, beaks almost touching — a symbol of love and fidelity. Set against a golden Madhubani border of leaves and blossoms.",
+      "featured": false,
+      "colors": [
+        "warm",
+        "multi-colour"
+      ],
+      "gradient": "radial-gradient(circle at 50% 50%, #fff3b0 0%, #4a7c3f 40%, #1a1a1a 100%)",
+      "medium": "Ink and acrylic on canvas board",
+      "subtitle": "Original Madhubani Painting",
+      "title": "Mayura Yugma",
+      "id": 12,
+      "image": "images/IMG_20200327_102929.jpg",
+      "images": [],
+      "collection": "Nature & Wildlife",
+      "sizeCategory": "small"
+    },
+    {
+      "new": false,
+      "size": "30 × 40 cm",
+      "price": 125,
+      "available": true,
+      "inspiration": "Two women sit together beneath a blossoming tree in quiet conversation — a peacock perches above, a fish swims in the border. Painted in the Madhubani tradition, this piece is an ode to friendship, nature, and the stories shared in stillness.",
+      "featured": false,
+      "colors": [
+        "warm",
+        "multi-colour"
+      ],
+      "gradient": "radial-gradient(circle at 50% 50%, #fff3b0 0%, #7a9e3a 35%, #C4956A 70%, #c2185b 100%)",
+      "medium": "Ink and acrylic on paper",
+      "subtitle": "Original Madhubani Painting",
+      "title": "Sakhiyaan",
+      "id": 13,
+      "image": "images/IMG_20201021_125911.jpg",
+      "images": [],
+      "collection": "Folk Traditions",
+      "sizeCategory": "small"
+    },
+    {
+      "new": false,
+      "size": "40 × 30 cm",
+      "price": 155,
+      "available": true,
+      "inspiration": "A larger, more refined canvas rendering of the sun deity — Bhaskar, the luminous one. The same bold folk tradition reimagined on stretched canvas, the intricate black mehndi-work ground giving way to bold saffron and coral rays.",
+      "featured": false,
+      "colors": [
+        "warm"
+      ],
+      "gradient": "radial-gradient(circle at 50% 50%, #F4C97A 0%, #e85000 40%, #1a1a1a 100%)",
+      "medium": "Acrylic on stretched canvas",
+      "subtitle": "Original Folk Painting",
+      "title": "Bhaskar",
+      "id": 14,
+      "image": "images/IMG_20220528_165612.jpg",
+      "images": [],
+      "collection": "Folk Art",
+      "sizeCategory": "medium"
+    },
+    {
+      "new": true,
+      "size": "30 × 40 cm",
+      "price": 145,
+      "available": true,
+      "inspiration": "Kamdhenu — the sacred wish-fulfilling cow of Hindu tradition — painted in the Pichwai folk style. A white cow adorned with garlands, a mandala blanket, and golden anklets walks beside a pink lotus on a deep terracotta ground. A painting of grace, abundance, and devotion.",
+      "featured": true,
+      "colors": [
+        "warm",
+        "multi-colour"
+      ],
+      "gradient": "radial-gradient(circle at 50% 50%, #f5e6d0 0%, #8B2500 50%, #4a1a00 100%)",
+      "medium": "Acrylic on stretched canvas",
+      "subtitle": "Original Folk Painting",
+      "title": "Kamdhenu",
+      "id": 15,
+      "image": "images/Screenshot_20240223_093842_Instagram.jpg",
+      "images": [],
+      "collection": "Folk Art",
+      "sizeCategory": "small"
+    },
+    {
+      "new": false,
+      "size": "30 × 30 cm",
+      "price": 45,
+      "available": true,
+      "inspiration": "A digital mandala created in deep navy and steel blue — concentric petals of precise geometry radiating outward from a still sapphire centre. Printed on archival paper, signed Art Vasu.",
+      "featured": false,
+      "colors": [
+        "cool",
+        "monochrome"
+      ],
+      "gradient": "radial-gradient(circle at 50% 50%, #4a90d9 0%, #1a3a8c 40%, #1a1a2e 100%)",
+      "medium": "Archival print on paper",
+      "subtitle": "Limited Edition Print",
+      "title": "Neela",
+      "id": 16,
+      "image": "images/pic_5.png",
+      "images": [],
+      "collection": "Celestial Series",
+      "sizeCategory": "small"
     }
   ]
 }
