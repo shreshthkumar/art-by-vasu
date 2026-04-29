@@ -282,7 +282,7 @@
     try {
       const res = await fetch('data/paintings.json');
       const data = await res.json();
-      const featured = data.paintings.filter(p => p.featured).slice(0, 4);
+      const featured = data.paintings.filter(p => p.featured).slice(0, 6);
       const grid = document.getElementById('featured-grid');
 
       grid.innerHTML = featured.map(p => {
