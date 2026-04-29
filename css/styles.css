@@ -1205,6 +1205,38 @@ p { max-width: 65ch; }
   object-fit: cover;
   border-radius: 0;
 }
+.hero__painting-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%);
+  padding: 1.5rem 1.25rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+.hero__painting-overlay-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.hero__painting-overlay-title {
+  color: #fff;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.hero__painting-overlay-price {
+  color: var(--gold);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.hero__painting-overlay-btn {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
 
 /* ============================================================
    STUDIO GALLERY — REAL IMAGES + VIDEOS

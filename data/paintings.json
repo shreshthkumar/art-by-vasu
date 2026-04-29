@@ -269,6 +269,24 @@
       "image": "images/mandala-blue-digital-print.png",
       "images": [],
       "inspiration": "Neela — the blue one — is a digital mandala of exacting geometric precision. Concentric rings of deep navy, steel blue, and silver unfold from a still sapphire centre, each petal-form tessellating perfectly into the next. Printed on archival paper and signed Art Vasu, this is an accessible way to bring the mandala tradition into your home."
+    },
+    {
+      "id": 17,
+      "title": "Chakra",
+      "subtitle": "Commission Work Only",
+      "collection": "Celestial Series",
+      "size": "60 × 60 cm",
+      "sizeCategory": "large",
+      "medium": "Acrylic dot-work on canvas",
+      "price": 220,
+      "available": false,
+      "featured": true,
+      "new": true,
+      "colors": ["warm", "cool", "multi-colour"],
+      "gradient": "radial-gradient(circle at 50% 50%, #c2185b 0%, #F4C97A 30%, #2C2C2C 70%, #1a1a1a 100%)",
+      "image": "images/screenshot-2026-04-28-at-23.25.29.png",
+      "images": [],
+      "inspiration": "Chakra — the wheel of life — radiates from a golden Om symbol nested at a deep pink lotus centre. Concentric rings of hand-laid dots, geometric triangles, emerald jewels, and a burnished copper band expand outward against a dark cosmic ground. Every layer a meditation, every dot an intention."
     }
   ]
 }
