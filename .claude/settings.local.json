@@ -3,7 +3,9 @@
     "allow": [
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(git -C /Users/shreskumar/Documents/ai_step_change/vscode/arckit/mandala-art-website pull --rebase git@github-shreshthkumar:shreshthkumar/art-by-vasu.git main)",
+      "Bash(git:*)"
     ]
   }
 }
