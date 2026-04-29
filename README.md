@@ -1,4 +1,4 @@
-# Art by Vasu — Mandala Canvas Art Website
+# Art Vasu — Mandala Canvas Art Website
 
 A hand-crafted e-commerce website for original mandala canvas paintings.
 

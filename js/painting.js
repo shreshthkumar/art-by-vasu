@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   // Update page title and breadcrumb
-  document.title = `${painting.title} — Art by Vasu`;
+  document.title = `${painting.title} — Art Vasu`;
   document.getElementById('breadcrumb-title').textContent = painting.title;
 
   // Render product detail
