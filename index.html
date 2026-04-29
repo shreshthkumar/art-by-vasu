@@ -443,7 +443,7 @@
               </div>
               ${p.available
                 ? `<button class="btn btn-teal hero__painting-overlay-btn" onclick="addToCart(${JSON.stringify(p).replace(/"/g,'&quot;')})">Add to Cart</button>`
-                : `<a href="contact.html" class="btn btn-teal hero__painting-overlay-btn">Commission This</a>`}
+                : `<a href="contact.html?commission=${encodeURIComponent(p.title)}&collection=${encodeURIComponent(p.collection)}&size=${encodeURIComponent(p.size)}&medium=${encodeURIComponent(p.medium)}" class="btn btn-teal hero__painting-overlay-btn">Commission This</a>`}
             </div>` : '';
           heroWrap.innerHTML = `<img src="${d.hero_image}" alt="${d.hero_title}" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">${overlayHtml}`;
         });

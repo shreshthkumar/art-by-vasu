@@ -90,9 +90,10 @@ function buildProductDetail(p) {
     ? `<span class="tag tag--new">Available</span>`
     : `<span class="tag tag--sold">Sold</span>`;
 
+  const commissionUrl = `contact.html?commission=${encodeURIComponent(p.title)}&collection=${encodeURIComponent(p.collection)}&size=${encodeURIComponent(p.size)}&medium=${encodeURIComponent(p.medium)}`;
   const cartBtn = p.available
     ? `<button class="btn btn-teal product-detail__cart-btn" onclick="addToCart(${JSON.stringify(p).replace(/"/g, '&quot;')})">Add to Cart</button>`
-    : `<button class="btn btn-outline-teal product-detail__cart-btn" onclick="showToast('Commission something similar →')">Commission a Similar Piece</button>`;
+    : `<a href="${commissionUrl}" class="btn btn-outline-teal product-detail__cart-btn">Commission a Similar Piece</a>`;
 
   const colorTags = (p.colors || []).map(c =>
     `<span class="product-color-tag">${c}</span>`).join('');
@@ -141,7 +142,7 @@ function buildRelatedCard(p) {
 
   const cartBtn = p.available
     ? `<button class="btn btn-teal painting-card__btn" onclick="handleRelatedCart(${p.id})">Add to Cart</button>`
-    : `<button class="btn btn-outline-teal painting-card__btn" onclick="showToast('Commission something similar →')">Commission Similar</button>`;
+    : `<a href="contact.html?commission=${encodeURIComponent(p.title)}&collection=${encodeURIComponent(p.collection)}&size=${encodeURIComponent(p.size)}&medium=${encodeURIComponent(p.medium)}" class="btn btn-outline-teal painting-card__btn">Commission Similar</a>`;
 
   return `
     <div class="painting-card ${!p.available ? 'painting-card--sold' : ''}" data-id="${p.id}">
