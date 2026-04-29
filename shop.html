@@ -55,9 +55,13 @@
   </section>
 
   <!-- ─── FILTERS ───────────────────────────────────────────── -->
-  <div class="shop-filters">
+  <div class="shop-filters" id="shop-filters">
     <div class="container">
-      <div class="shop-filters__inner">
+      <button class="filter-toggle-btn" id="filter-toggle-btn" onclick="toggleFilters()">
+        <span>Filters &amp; Sort</span>
+        <span class="filter-toggle-btn__icon">▾</span>
+      </button>
+      <div class="shop-filters__inner" id="shop-filters-inner">
 
         <div class="filter-group">
           <span class="filter-label">Collection</span>
@@ -192,6 +196,15 @@
 <script src="js/main.js"></script>
 <script src="js/shop.js"></script>
 <script src="js/cms-loader.js"></script>
+<script>
+  function toggleFilters() {
+    const filters = document.getElementById('shop-filters');
+    const icon = document.querySelector('.filter-toggle-btn__icon');
+    filters.classList.toggle('shop-filters--open');
+    icon.textContent = filters.classList.contains('shop-filters--open') ? '▴' : '▾';
+  }
+  window.toggleFilters = toggleFilters;
+</script>
 <script>
   fetch('data/shop.json').then(r => r.json()).then(d => {
     document.getElementById('shop-hero-label').textContent   = d.hero_label;
