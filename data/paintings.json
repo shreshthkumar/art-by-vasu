@@ -91,24 +91,6 @@
       "inspiration": "Two women perform a riverside ritual in this vibrant Madhubani scene — one offering into the sacred water while fish swim beneath and a sprawling tree arches overhead. Painted in bold traditional inks with a characteristic Mithila border, Nadi speaks of seasonal rhythms and feminine devotion."
     },
     {
-      "id": 6,
-      "title": "Akasha",
-      "subtitle": "Original Mandala Painting",
-      "collection": "Sacred Geometry",
-      "size": "70 × 70 cm",
-      "sizeCategory": "large",
-      "medium": "Acrylic on stretched canvas",
-      "price": 320,
-      "available": false,
-      "featured": false,
-      "new": false,
-      "colors": ["cool"],
-      "gradient": "radial-gradient(circle at 50% 50%, #a8d8f0 0%, #4a7cc8 25%, #1a3a8c 55%, #0a1a4a 80%, #050d2a 100%)",
-      "image": "",
-      "images": [],
-      "inspiration": "Akasha — ether, infinite space. Deep indigos and ultramarines suggest a cosmos folded into perfect symmetry. Photo coming soon."
-    },
-    {
       "id": 7,
       "title": "Naukaa",
       "subtitle": "Original Madhubani Painting",
