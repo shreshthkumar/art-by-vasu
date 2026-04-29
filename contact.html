@@ -270,6 +270,30 @@
     }
   });
 
+  // Pre-fill form from commission query params
+  (function() {
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('commission');
+    if (!title) return;
+    const collection = params.get('collection') || '';
+    const size       = params.get('size') || '';
+    const medium     = params.get('medium') || '';
+    // Pre-select subject
+    const subjectEl = document.getElementById('subject');
+    if (subjectEl) subjectEl.value = 'commission';
+    // Pre-fill message
+    const msgEl = document.getElementById('message');
+    if (msgEl) msgEl.value =
+      `Hi, I'm interested in commissioning a piece similar to "${title}".\n\n` +
+      `Reference painting details:\n` +
+      `  • Collection: ${collection}\n` +
+      `  • Size: ${size}\n` +
+      `  • Medium: ${medium}\n\n` +
+      `My requirements:\n`;
+    // Scroll to form
+    document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  })();
+
   // Contact form
   document.getElementById('contact-form')?.addEventListener('submit', e => {
     e.preventDefault();

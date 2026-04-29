@@ -41,7 +41,7 @@ function buildPaintingCard(p) {
 
   const cartBtn = p.available
     ? `<button class="btn btn-teal painting-card__btn" onclick="handleAddToCart(${p.id})">Add to Cart</button>`
-    : `<a href="contact.html" class="btn btn-outline-teal painting-card__btn">Commission Similar</a>`;
+    : `<a href="contact.html?commission=${encodeURIComponent(p.title)}&collection=${encodeURIComponent(p.collection)}&size=${encodeURIComponent(p.size)}&medium=${encodeURIComponent(p.medium)}" class="btn btn-outline-teal painting-card__btn">Commission Similar</a>`;
 
   const imgEl = p.image
     ? `<img src="${p.image}" alt="${p.title}" class="painting-card__img-photo">`

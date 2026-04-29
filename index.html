@@ -298,7 +298,7 @@
 
         const cartBtn = p.available
           ? `<button class="btn btn-teal painting-card__btn" onclick="addToCart(${JSON.stringify(p).replace(/"/g,'&quot;')})">Add to Cart</button>`
-          : `<a href="contact.html" class="btn btn-outline-teal painting-card__btn">Commission Similar</a>`;
+          : `<a href="contact.html?commission=${encodeURIComponent(p.title)}&collection=${encodeURIComponent(p.collection)}&size=${encodeURIComponent(p.size)}&medium=${encodeURIComponent(p.medium)}" class="btn btn-outline-teal painting-card__btn">Commission Similar</a>`;
 
         return `
           <div class="painting-card ${!p.available ? 'painting-card--sold' : ''}">
