@@ -64,6 +64,9 @@
           <h2 id="form-heading">Send a Message</h2>
           <p id="form-intro">I reply to all messages within 48 hours.</p>
           <form id="contact-form" novalidate>
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+            <input type="hidden" name="subject" value="New enquiry from artvasu.com">
+            <input type="hidden" name="from_name" value="Art Vasu Website">
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
               <div class="form-group">
                 <label class="form-label" for="first-name">First Name</label>
@@ -294,14 +297,40 @@
     document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   })();
 
-  // Contact form
-  document.getElementById('contact-form')?.addEventListener('submit', e => {
+  // Contact form — Web3Forms submission
+  document.getElementById('contact-form')?.addEventListener('submit', async e => {
     e.preventDefault();
-    const email = document.getElementById('email').value;
-    const name  = document.getElementById('first-name').value;
-    if (!email || !name) { showToast('Please fill in your name and email.'); return; }
-    showToast(`Thank you, ${name}! I'll be in touch within 48 hours.`);
-    e.target.reset();
+    const form  = e.target;
+    const name  = document.getElementById('first-name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    if (!name || !email) { showToast('Please fill in your name and email.'); return; }
+
+    const submitBtn = form.querySelector('.form-submit');
+    submitBtn.textContent = 'Sending…';
+    submitBtn.disabled = true;
+
+    // Build payload including all visible form fields
+    const data = new FormData(form);
+    data.append('name', name + ' ' + document.getElementById('last-name').value.trim());
+    data.append('email', email);
+    data.append('topic', document.getElementById('subject').value);
+    data.append('message', document.getElementById('message').value);
+
+    try {
+      const res  = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
+      const json = await res.json();
+      if (json.success) {
+        showToast(`Thank you, ${name}! I'll be in touch within 48 hours.`);
+        form.reset();
+      } else {
+        showToast('Something went wrong — please email contact@artvasu.com directly.');
+      }
+    } catch {
+      showToast('Could not send — please email contact@artvasu.com directly.');
+    }
+
+    submitBtn.textContent = 'Send Message';
+    submitBtn.disabled = false;
   });
 </script>
 </body>
