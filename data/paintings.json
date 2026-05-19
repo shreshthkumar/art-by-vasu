@@ -44,7 +44,7 @@
       "size": "100 × 100 cm",
       "sizeCategory": "large",
       "medium": "Acrylic on stretched canvas",
-      "price": 380,
+      "price": 250,
       "available": true,
       "featured": true,
       "new": false,
@@ -140,8 +140,8 @@
       "new": true,
       "colors": ["warm", "multi-colour"],
       "gradient": "radial-gradient(circle at 50% 50%, #4a90d9 0%, #e8a000 35%, #2C2C2C 65%, #C4956A 100%)",
-      "image": "images/madhubani-chatushpada-closeup.jpg",
-      "images": ["images/madhubani-chatushpada-installation.png"],
+      "image": "images/madhubani-chatushpada-installation.png",
+      "images": ["images/madhubani-chatushpada-closeup.jpg"],
       "inspiration": "Four sacred animals — tortoise, peacock, owl, and elephant — each held in their own circular medallion in this tall vertical Madhubani scroll. Painted in the bold, flat style of Mithila folk art with a traditional border of leaf and dot motifs, Chatushpada is as striking above a fireplace as it is on a narrow hallway wall."
     },
     {
