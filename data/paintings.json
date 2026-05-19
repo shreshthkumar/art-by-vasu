@@ -59,7 +59,7 @@
       "title": "Gajamata",
       "subtitle": "Prints Available",
       "collection": "Nature & Wildlife",
-      "size": "25 × 35 cm",
+      "size": "30 × 42 cm",
       "sizeCategory": "small",
       "medium": "Prints on paper",
       "price": 20,
@@ -77,7 +77,7 @@
       "title": "Nadi",
       "subtitle": "Original Madhubani Painting",
       "collection": "Folk Traditions",
-      "size": "30 × 40 cm",
+      "size": "30 × 42 cm",
       "sizeCategory": "small",
       "medium": "Ink and acrylic on paper, framed",
       "price": 135,
@@ -106,7 +106,7 @@
       "gradient": "radial-gradient(circle at 50% 50%, #4a90d9 0%, #4a6741 40%, #F4C97A 75%, #c2185b 100%)",
       "image": "images/madhubani-women-boat-river.png",
       "images": [],
-      "inspiration": "Two women share a boat ride on a sacred river — above them a stylised folk-art sun watches over the journey, while fish leap in the water below and flowering trees line both banks. A joyful, luminous Madhubani scene painted on handmade paper."
+      "inspiration": "Two women share a boat ride on a sacred river — above them a stylised folk-art sun watches over the journey. A joyful, luminous Madhubani scene painted on handmade paper."
     },
     {
       "id": 8,
@@ -232,7 +232,7 @@
       "gradient": "radial-gradient(circle at 50% 50%, #f5e6d0 0%, #8B2500 50%, #4a1a00 100%)",
       "image": "images/folk-kamdhenu-sacred-cow.jpg",
       "images": [],
-      "inspiration": "Kamdhenu — the divine wish-fulfilling cow of Hindu tradition — walks in regal procession across a deep terracotta ground. Adorned with a garland of rudraksha beads, a decorated mandala saddle cloth, and golden anklets, she carries a pink lotus. Painted in the Pichwai-inspired folk tradition on stretched canvas."
+      "inspiration": "Kamdhenu — the divine wish-fulfilling cow — walks in regal procession across a deep terracotta ground. Adorned with a garland of rudraksha beads, a decorated mandala saddle cloth, and golden anklets, she carries a pink lotus. Painted in the Pichwai-inspired folk tradition on stretched canvas."
     },
     {
       "id": 17,
