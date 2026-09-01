@@ -43,19 +43,39 @@
 </div>
 
 <main class="page-content">
-  <section class="section text-center" style="padding-top:8rem;padding-bottom:8rem">
+  <section class="section text-center" style="padding-top:6rem;padding-bottom:2rem">
     <div class="container">
       <p class="section-header__label" style="color:var(--terra)">Order Confirmed</p>
-      <h1>Thank You</h1>
+      <h1 id="success-heading">Thank You</h1>
       <div class="divider divider--center"></div>
-      <p class="text-muted" style="max-width:55ch;margin-inline:auto">
+      <p class="text-muted" id="success-message" style="max-width:55ch;margin-inline:auto">
         Your painting is on its way to becoming part of your story. I'll begin preparing it for shipping right away, and you'll receive a confirmation email with your order details shortly.
       </p>
       <p class="text-muted" id="order-ref" style="margin-top:1rem;font-size:0.85rem"></p>
-      <div style="display:flex;gap:1rem;justify-content:center;margin-top:2rem;flex-wrap:wrap">
-        <a href="shop.html" class="btn btn-primary">Continue Browsing</a>
-        <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+    </div>
+  </section>
+
+  <section class="section" id="order-summary-section" style="padding-top:1rem;display:none">
+    <div class="container" style="max-width:640px">
+      <div id="order-summary" style="border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem 1.5rem 0.5rem"></div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-top:2.5rem">
+        <div>
+          <p style="font-weight:600;font-size:0.85rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--taupe);margin-bottom:0.5rem">What Happens Next</p>
+          <p class="text-muted" style="font-size:0.9rem">Your painting is carefully packed by hand and dispatched within 5–7 days. You'll get a tracking link by email once it ships.</p>
+        </div>
+        <div>
+          <p style="font-weight:600;font-size:0.85rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--taupe);margin-bottom:0.5rem">Questions About Your Order</p>
+          <p class="text-muted" style="font-size:0.9rem">Reach out any time via the <a href="contact.html" style="text-decoration:underline">contact page</a> and mention your order reference above — I reply within 48 hours.</p>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section text-center" style="padding-top:0.5rem;padding-bottom:5rem">
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="shop.html" class="btn btn-primary">Continue Browsing</a>
+      <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
     </div>
   </section>
 </main>
@@ -99,10 +119,46 @@
 <script src="js/main.js"></script>
 <script src="js/cms-loader.js"></script>
 <script>
+  // Capture the cart before clearing it so we can show what was actually bought.
+  const purchasedItems = getCart();
   clearCart();
+
   const sessionId = new URLSearchParams(window.location.search).get('session_id');
   if (sessionId) {
-    document.getElementById('order-ref').textContent = `Order reference: ${sessionId}`;
+    document.getElementById('order-ref').textContent = `Order reference: ${sessionId.slice(-12).toUpperCase()}`;
+  }
+
+  if (purchasedItems.length > 0) {
+    const first = purchasedItems[0].title;
+    const heading = purchasedItems.length === 1
+      ? `"${first}" Is Yours`
+      : `Your ${purchasedItems.length} Paintings Are On Their Way`;
+    document.getElementById('success-heading').textContent = heading;
+
+    const total = purchasedItems.reduce((sum, item) => sum + item.price, 0);
+    document.getElementById('success-message').textContent =
+      `Thank you for your order of £${total}. Each piece is carefully packed by hand before it leaves the studio, and you'll receive a confirmation email shortly.`;
+
+    document.getElementById('order-summary').innerHTML = purchasedItems.map(item => `
+      <div class="cart-item">
+        <div class="cart-item__img">
+          ${item.image
+            ? `<img src="${item.image}" alt="${item.title}" style="width:100%;height:100%;object-fit:cover;">`
+            : `<div class="cart-item__img-bg" style="background:${item.gradient}"></div>`}
+        </div>
+        <div class="cart-item__info">
+          <div class="cart-item__name">${item.title}</div>
+          <div class="cart-item__meta">${item.size} · ${item.medium}</div>
+        </div>
+        <div class="cart-item__price">£${item.price}</div>
+      </div>`).join('');
+
+    document.getElementById('order-summary-section').style.display = '';
+  } else if (!sessionId) {
+    // Direct visit with no session and no cached cart — don't imply a purchase happened.
+    document.getElementById('success-heading').textContent = 'Nothing to Confirm';
+    document.getElementById('success-message').textContent =
+      "We couldn't find a recent order for this page. If you've just completed a purchase, check your email for confirmation — otherwise, browse the shop to find your next piece.";
   }
 </script>
 </body>
