@@ -42,7 +42,7 @@
   <a href="contact.html">Contact</a>
 </div>
 
-<div class="page-content">
+<main class="page-content">
 
   <!-- ─── SHOP HERO ─────────────────────────────────────────── -->
   <section class="shop-hero">
@@ -125,7 +125,7 @@
   <!-- ─── COMMISSION CTA ─────────────────────────────────────── -->
   <section class="section--tight newsletter">
     <div class="container text-center">
-      <p class="section-header__label" style="color:rgba(255,255,255,0.7)" id="commission-label">Can't find what you're looking for?</p>
+      <p class="section-header__label" style="color:rgba(255,255,255,0.95)" id="commission-label">Can't find what you're looking for?</p>
       <h2 id="commission-heading">Commission a Custom Piece</h2>
       <div class="divider divider--center"></div>
       <p style="margin-inline:auto" id="commission-text">Tell me your colours, your intention, your space — and I'll create something entirely yours.</p>
@@ -133,7 +133,7 @@
     </div>
   </section>
 
-</div>
+</main>
 
 <!-- ─── FOOTER ───────────────────────────────────────────────── -->
 <footer class="footer">
@@ -147,7 +147,7 @@
         </div>
       </div>
       <div class="footer__col">
-        <h4>Navigate</h4>
+        <h3>Navigate</h3>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="shop.html">Shop All</a></li>
@@ -156,7 +156,7 @@
         </ul>
       </div>
       <div class="footer__col">
-        <h4>Info</h4>
+        <h3>Info</h3>
         <ul>
           <li><a href="contact.html">Custom Commissions</a></li>
           <li><a href="contact.html#faq">Shipping Info</a></li>
@@ -186,7 +186,12 @@
       <span class="cart-total__label">Total</span>
       <span class="cart-total__amount">£0</span>
     </div>
-    <button class="btn btn-teal cart-checkout-btn" onclick="showToast('Connect a payment provider (Stripe/PayPal) to enable checkout.')">
+    <select class="form-select cart-region" aria-label="Shipping region">
+      <option value="uk">Ship to UK</option>
+      <option value="europe">Ship to Europe</option>
+      <option value="international">Ship internationally</option>
+    </select>
+    <button class="btn btn-teal cart-checkout-btn">
       Proceed to Checkout
     </button>
     <p class="cart-note">Shipping calculated at checkout · Secure payment</p>
@@ -194,6 +199,7 @@
 </aside>
 
 <script src="js/main.js"></script>
+<script src="js/checkout.js"></script>
 <script src="js/shop.js"></script>
 <script src="js/cms-loader.js"></script>
 <script>

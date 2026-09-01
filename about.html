@@ -42,12 +42,12 @@
   <a href="contact.html">Contact</a>
 </div>
 
-<div class="page-content">
+<main class="page-content">
 
   <!-- ─── ABOUT HERO ────────────────────────────────────────── -->
   <section class="about-hero">
     <div class="container">
-      <p class="section-header__label" style="color:var(--terra)">The Artist</p>
+      <p class="section-header__label" style="color:var(--terra-on-dark)">The Artist</p>
       <h1>About Vasu</h1>
       <div class="divider divider--center"></div>
       <p style="max-width:55ch;margin-inline:auto;color:rgba(255,255,255,0.7)">
@@ -172,7 +172,7 @@
     </div>
   </section>
 
-</div>
+</main>
 
 <!-- ─── FOOTER ───────────────────────────────────────────────── -->
 <footer class="footer">
@@ -186,7 +186,7 @@
         </div>
       </div>
       <div class="footer__col">
-        <h4>Navigate</h4>
+        <h3>Navigate</h3>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="shop.html">Shop All</a></li>
@@ -195,7 +195,7 @@
         </ul>
       </div>
       <div class="footer__col">
-        <h4>Info</h4>
+        <h3>Info</h3>
         <ul>
           <li><a href="contact.html">Custom Commissions</a></li>
           <li><a href="contact.html#faq">Shipping Info</a></li>
@@ -224,7 +224,12 @@
       <span class="cart-total__label">Total</span>
       <span class="cart-total__amount">£0</span>
     </div>
-    <button class="btn btn-teal cart-checkout-btn" onclick="showToast('Connect a payment provider to enable checkout.')">
+    <select class="form-select cart-region" aria-label="Shipping region">
+      <option value="uk">Ship to UK</option>
+      <option value="europe">Ship to Europe</option>
+      <option value="international">Ship internationally</option>
+    </select>
+    <button class="btn btn-teal cart-checkout-btn">
       Proceed to Checkout
     </button>
     <p class="cart-note">Shipping calculated at checkout · Secure payment</p>
@@ -232,6 +237,7 @@
 </aside>
 
 <script src="js/main.js"></script>
+<script src="js/checkout.js"></script>
 <script src="js/cms-loader.js"></script>
 <script>
   fetch('data/about.json').then(r => r.json()).then(d => {

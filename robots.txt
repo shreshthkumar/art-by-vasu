@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /netlify/
+Disallow: /success.html
+
+Sitemap: https://www.artvasu.com/sitemap.xml

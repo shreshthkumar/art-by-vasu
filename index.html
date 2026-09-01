@@ -10,7 +10,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <!-- Hero image is set via CMS (data/home.json hero_image) — update this hint if that changes -->
+  <link rel="preload" as="image" href="images/screenshot-2026-04-28-at-23.25.29.webp" fetchpriority="high">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Organization",
+    "name": "Art Vasu",
+    "url": "https://www.artvasu.com/",
+    "logo": "https://www.artvasu.com/favicon.svg",
+    "sameAs": ["https://www.instagram.com/art.vasu/"]
+  }
+  </script>
 </head>
 <body>
 
@@ -45,7 +56,7 @@
   <button class="btn btn-teal" style="margin-top:1rem" onclick="document.querySelector('.nav__mobile').classList.remove('open');document.querySelector('.nav__cart-btn').click()">View Cart</button>
 </div>
 
-<div class="page-content">
+<main class="page-content">
 
   <!-- ─── HERO ───────────────────────────────────────────────── -->
   <section class="hero">
@@ -193,7 +204,7 @@
   <!-- ─── NEWSLETTER ───────────────────────────────────────────── -->
   <section class="section--tight newsletter">
     <div class="container text-center">
-      <p class="section-header__label" style="color:rgba(255,255,255,0.7)">Stay Connected</p>
+      <p class="section-header__label" style="color:rgba(255,255,255,0.95)">Stay Connected</p>
       <h2 id="newsletter-heading">Join the Circle</h2>
       <div class="divider divider--center"></div>
       <p id="newsletter-subtitle">New paintings, first access to limited works, and notes from the studio — straight to your inbox.</p>
@@ -205,7 +216,7 @@
     </div>
   </section>
 
-</div><!-- /page-content -->
+</main><!-- /page-content -->
 
 <!-- ─── FOOTER ───────────────────────────────────────────────── -->
 <footer class="footer">
@@ -219,7 +230,7 @@
         </div>
       </div>
       <div class="footer__col">
-        <h4>Navigate</h4>
+        <h3>Navigate</h3>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="shop.html">Shop All</a></li>
@@ -229,7 +240,7 @@
         </ul>
       </div>
       <div class="footer__col">
-        <h4>Info</h4>
+        <h3>Info</h3>
         <ul>
           <li><a href="contact.html">Custom Commissions</a></li>
           <li><a href="contact.html#faq">Shipping Info</a></li>
@@ -259,7 +270,12 @@
       <span class="cart-total__label">Total</span>
       <span class="cart-total__amount">£0</span>
     </div>
-    <button class="btn btn-teal cart-checkout-btn" onclick="showToast('Connect a payment provider (Stripe/PayPal) to enable checkout.')">
+    <select class="form-select cart-region" aria-label="Shipping region">
+      <option value="uk">Ship to UK</option>
+      <option value="europe">Ship to Europe</option>
+      <option value="international">Ship internationally</option>
+    </select>
+    <button class="btn btn-teal cart-checkout-btn">
       Proceed to Checkout
     </button>
     <p class="cart-note">Shipping calculated at checkout · Secure payment</p>
@@ -276,6 +292,7 @@
 </div>
 
 <script src="js/main.js"></script>
+<script src="js/checkout.js"></script>
 <script src="js/cms-loader.js"></script>
 <script>
   // Load featured paintings on homepage
@@ -293,7 +310,7 @@
         tags.push(`<span class="tag tag--collection">${p.collection}</span>`);
 
         const imgEl = p.image
-          ? `<img src="${p.image}" alt="${p.title}" class="painting-card__img-photo">`
+          ? `<img src="${p.image}" alt="${p.title}" class="painting-card__img-photo" loading="lazy" decoding="async">`
           : `<div class="painting-card__img-bg" style="background:${p.gradient}"></div>`;
 
         const cartBtn = p.available
@@ -349,7 +366,7 @@
 
       if (item.type === 'video') {
         const thumb = item.thumbnail
-          ? `<img src="${item.thumbnail}" alt="${item.caption || 'Video'}" class="instagram-item__img">`
+          ? `<img src="${item.thumbnail}" alt="${item.caption || 'Video'}" class="instagram-item__img" loading="lazy" decoding="async">`
           : `<div class="instagram-item__bg" style="background:radial-gradient(circle,#4A7C7E,#2C2C2C)"></div>`;
         return `
           <div class="instagram-item instagram-item--video" onclick="openVideoModal('${item.url}')">
@@ -363,7 +380,7 @@
 
       return `
         <div class="instagram-item">
-          <img src="${item.url}" alt="${item.caption || ''}" class="instagram-item__img">
+          <img src="${item.url}" alt="${item.caption || ''}" class="instagram-item__img" loading="lazy" decoding="async">
           ${caption}
         </div>`;
     }).join('');
@@ -412,7 +429,7 @@
     document.getElementById('about-body-2').textContent  = d.about_body_2;
     if (d.about_photo) {
       document.getElementById('about-photo-wrap').innerHTML =
-        `<img src="${d.about_photo}" alt="The Artist" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg)">`;
+        `<img src="${d.about_photo}" alt="The Artist" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg)" loading="lazy" decoding="async">`;
     }
     // Process strip
     if (d.process_steps) {
@@ -445,7 +462,7 @@
                 ? `<button class="btn btn-teal hero__painting-overlay-btn" onclick="addToCart(${JSON.stringify(p).replace(/"/g,'&quot;')})">Add to Cart</button>`
                 : `<a href="contact.html?commission=${encodeURIComponent(p.title)}&collection=${encodeURIComponent(p.collection)}&size=${encodeURIComponent(p.size)}&medium=${encodeURIComponent(p.medium)}" class="btn btn-teal hero__painting-overlay-btn">Commission This</a>`}
             </div>` : '';
-          heroWrap.innerHTML = `<img src="${d.hero_image}" alt="${d.hero_title}" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">${overlayHtml}`;
+          heroWrap.innerHTML = `<img src="${d.hero_image}" alt="${d.hero_title}" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">${overlayHtml}`;
         });
       }
     }
@@ -470,17 +487,6 @@
     document.getElementById('newsletter-heading').textContent  = d.newsletter_heading;
     document.getElementById('newsletter-subtitle').textContent = d.newsletter_subtitle;
   });
-</script>
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
 </script>
 </body>
 </html>

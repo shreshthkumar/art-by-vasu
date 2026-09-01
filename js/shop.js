@@ -44,7 +44,7 @@ function buildPaintingCard(p) {
     : `<a href="contact.html?commission=${encodeURIComponent(p.title)}&collection=${encodeURIComponent(p.collection)}&size=${encodeURIComponent(p.size)}&medium=${encodeURIComponent(p.medium)}" class="btn btn-outline-teal painting-card__btn">Commission Similar</a>`;
 
   const imgEl = p.image
-    ? `<img src="${p.image}" alt="${p.title}" class="painting-card__img-photo">`
+    ? `<img src="${p.image}" alt="${p.title}" class="painting-card__img-photo" loading="lazy" decoding="async">`
     : `<div class="painting-card__img-bg" style="background:${p.gradient}"></div>`;
 
   return `

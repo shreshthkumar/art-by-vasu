@@ -42,7 +42,7 @@
   <a href="contact.html">Contact</a>
 </div>
 
-<div class="page-content">
+<main class="page-content">
 
   <!-- ─── CONTACT HERO ──────────────────────────────────────── -->
   <section class="contact-hero">
@@ -173,7 +173,7 @@
     </div>
   </section>
 
-</div>
+</main>
 
 <!-- ─── FOOTER ───────────────────────────────────────────────── -->
 <footer class="footer">
@@ -187,7 +187,7 @@
         </div>
       </div>
       <div class="footer__col">
-        <h4>Navigate</h4>
+        <h3>Navigate</h3>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="shop.html">Shop All</a></li>
@@ -196,7 +196,7 @@
         </ul>
       </div>
       <div class="footer__col">
-        <h4>Info</h4>
+        <h3>Info</h3>
         <ul>
           <li><a href="contact.html">Custom Commissions</a></li>
           <li><a href="#faq">Shipping Info</a></li>
@@ -226,7 +226,12 @@
       <span class="cart-total__label">Total</span>
       <span class="cart-total__amount">£0</span>
     </div>
-    <button class="btn btn-teal cart-checkout-btn" onclick="showToast('Connect a payment provider to enable checkout.')">
+    <select class="form-select cart-region" aria-label="Shipping region">
+      <option value="uk">Ship to UK</option>
+      <option value="europe">Ship to Europe</option>
+      <option value="international">Ship internationally</option>
+    </select>
+    <button class="btn btn-teal cart-checkout-btn">
       Proceed to Checkout
     </button>
     <p class="cart-note">Shipping calculated at checkout · Secure payment</p>
@@ -234,6 +239,7 @@
 </aside>
 
 <script src="js/main.js"></script>
+<script src="js/checkout.js"></script>
 <script src="js/cms-loader.js"></script>
 <script>
   function initFaqAccordion() {

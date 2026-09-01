@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <title>Painting — Art Vasu</title>
-  <meta name="description" content="Original hand-painted folk and mandala painting by Vasu.">
+  <title>Thank You — Art Vasu</title>
+  <meta name="robots" content="noindex">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -43,43 +43,22 @@
 </div>
 
 <main class="page-content">
-
-  <!-- ─── BREADCRUMB ─────────────────────────────────────────── -->
-  <div class="breadcrumb" id="breadcrumb">
+  <section class="section text-center" style="padding-top:8rem;padding-bottom:8rem">
     <div class="container">
-      <a href="index.html">Home</a>
-      <span class="breadcrumb__sep">›</span>
-      <a href="shop.html">Shop</a>
-      <span class="breadcrumb__sep">›</span>
-      <span id="breadcrumb-title">Loading…</span>
-    </div>
-  </div>
-
-  <!-- ─── PRODUCT DETAIL ────────────────────────────────────── -->
-  <section class="section">
-    <div class="container">
-      <div class="product-detail__inner" id="product-detail">
-        <!-- Rendered by painting.js -->
-        <div style="grid-column:1/-1;text-align:center;padding:4rem;color:var(--text-muted)">Loading painting…</div>
+      <p class="section-header__label" style="color:var(--terra)">Order Confirmed</p>
+      <h1>Thank You</h1>
+      <div class="divider divider--center"></div>
+      <p class="text-muted" style="max-width:55ch;margin-inline:auto">
+        Your painting is on its way to becoming part of your story. I'll begin preparing it for shipping right away, and you'll receive a confirmation email with your order details shortly.
+      </p>
+      <p class="text-muted" id="order-ref" style="margin-top:1rem;font-size:0.85rem"></p>
+      <div style="display:flex;gap:1rem;justify-content:center;margin-top:2rem;flex-wrap:wrap">
+        <a href="shop.html" class="btn btn-primary">Continue Browsing</a>
+        <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
       </div>
     </div>
   </section>
-
 </main>
-
-<!-- ─── RELATED PAINTINGS ──────────────────────────────────── -->
-<section class="related-paintings" id="related-section" style="display:none">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-header__left">
-        <p class="section-header__label">From the Same Collection</p>
-        <h2>You Might Also Like</h2>
-        <div class="divider"></div>
-      </div>
-    </div>
-    <div class="paintings-grid" id="related-grid"></div>
-  </div>
-</section>
 
 <!-- ─── FOOTER ───────────────────────────────────────────────── -->
 <footer class="footer">
@@ -107,7 +86,6 @@
           <li><a href="contact.html">Custom Commissions</a></li>
           <li><a href="contact.html#faq">Shipping Info</a></li>
           <li><a href="contact.html#faq">Returns Policy</a></li>
-          <li><a href="contact.html#faq">Care Instructions</a></li>
         </ul>
       </div>
     </div>
@@ -118,35 +96,14 @@
   </div>
 </footer>
 
-<!-- ─── CART SIDEBAR ─────────────────────────────────────────── -->
-<div class="cart-overlay"></div>
-<aside class="cart-sidebar">
-  <div class="cart-sidebar__header">
-    <h2 class="cart-sidebar__title">Your Cart</h2>
-    <button class="cart-close-btn">✕</button>
-  </div>
-  <div class="cart-items"></div>
-  <div class="cart-sidebar__footer">
-    <div class="cart-subtotal"><span>Subtotal</span><span>£0</span></div>
-    <div class="cart-total">
-      <span class="cart-total__label">Total</span>
-      <span class="cart-total__amount">£0</span>
-    </div>
-    <select class="form-select cart-region" aria-label="Shipping region">
-      <option value="uk">Ship to UK</option>
-      <option value="europe">Ship to Europe</option>
-      <option value="international">Ship internationally</option>
-    </select>
-    <button class="btn btn-teal cart-checkout-btn">
-      Proceed to Checkout
-    </button>
-    <p class="cart-note">Shipping calculated at checkout · Secure payment</p>
-  </div>
-</aside>
-
 <script src="js/main.js"></script>
-<script src="js/checkout.js"></script>
-<script src="js/painting.js"></script>
 <script src="js/cms-loader.js"></script>
+<script>
+  clearCart();
+  const sessionId = new URLSearchParams(window.location.search).get('session_id');
+  if (sessionId) {
+    document.getElementById('order-ref').textContent = `Order reference: ${sessionId}`;
+  }
+</script>
 </body>
 </html>

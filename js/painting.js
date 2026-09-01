@@ -61,9 +61,9 @@ function buildGallery(painting) {
       </div>`;
   }
 
-  const slides = allImages.map(src => `
+  const slides = allImages.map((src, i) => `
     <div class="carousel__slide">
-      <img src="${src}" alt="${painting.title}" loading="lazy">
+      <img src="${src}" alt="${painting.title}" loading="${i === 0 ? 'eager' : 'lazy'}" decoding="async">
     </div>`).join('');
 
   const arrows = allImages.length > 1 ? `
@@ -132,7 +132,7 @@ function buildProductDetail(p) {
 /* ─── RELATED PAINTINGS ───────────────────────────────────── */
 function buildRelatedCard(p) {
   const img = p.image
-    ? `<img src="${p.image}" alt="${p.title}" class="painting-card__img-photo">`
+    ? `<img src="${p.image}" alt="${p.title}" class="painting-card__img-photo" loading="lazy" decoding="async">`
     : `<div class="painting-card__img-bg" style="background:${p.gradient}"></div>`;
 
   const tags = [];
@@ -160,6 +160,39 @@ function buildRelatedCard(p) {
         </div>
       </div>
     </div>`;
+}
+
+/* ─── PRODUCT STRUCTURED DATA (SEO / AI search visibility) ──── */
+function injectProductSchema(p) {
+  const images = [p.image, ...(p.images || [])]
+    .filter(Boolean)
+    .map(src => new URL(src, window.location.origin).href);
+
+  const schema = {
+    '@context': 'https://schema.org/',
+    '@type': 'Product',
+    name: p.title,
+    description: p.inspiration,
+    image: images,
+    sku: String(p.id),
+    brand: { '@type': 'Brand', name: 'Art Vasu' },
+    category: p.collection,
+    offers: {
+      '@type': 'Offer',
+      url: window.location.href,
+      priceCurrency: 'GBP',
+      price: p.price,
+      availability: p.available
+        ? 'https://schema.org/InStock'
+        : 'https://schema.org/OutOfStock',
+      itemCondition: 'https://schema.org/NewCondition',
+    },
+  };
+
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify(schema);
+  document.head.appendChild(script);
 }
 
 // Store all paintings so related cart buttons work
@@ -200,6 +233,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Render product detail
   detail.innerHTML = buildProductDetail(painting);
+  injectProductSchema(painting);
 
   // Init carousel
   const allImages = [];

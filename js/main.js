@@ -71,6 +71,12 @@ function removeFromCart(id) {
   renderCartItems();
 }
 
+function clearCart() {
+  saveCart([]);
+  updateCartCount();
+  renderCartItems();
+}
+
 function updateCartCount() {
   const count = getCart().length;
   document.querySelectorAll('.cart-count').forEach(el => {
@@ -195,3 +201,4 @@ document.addEventListener('DOMContentLoaded', () => {
 // Expose globally for inline handlers
 window.addToCart = addToCart;
 window.showToast = showToast;
+window.clearCart = clearCart;
