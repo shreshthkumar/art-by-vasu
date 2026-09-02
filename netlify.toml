@@ -22,3 +22,27 @@
   from = "/api/callback"
   to = "/.netlify/functions/auth-callback"
   status = 200
+
+# Public site — a reasonably strict CSP. 'unsafe-inline' is required for style-src
+# (the pages use inline style="" attributes extensively) and for a handful of small
+# inline <script> blocks that wire up page data; script-src otherwise only allows
+# self and the third-party hosts actually used (Netlify Identity was removed).
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), camera=(), microphone=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.web3forms.com; frame-ancestors 'none'; base-uri 'self'; object-src 'none'"
+
+# /admin/ runs Decap CMS, a bundled third-party SPA that isn't practical to audit
+# for inline-script/eval usage — a strict CSP here risks silently breaking the
+# editor. Keep the clickjacking/sniffing protections, relax script/style rules.
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self' https://unpkg.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; font-src 'self' https://unpkg.com data:; img-src 'self' data: https:; connect-src 'self' https://api.github.com https://github.com; frame-ancestors 'none'"
