@@ -626,6 +626,15 @@ p { max-width: 65ch; }
 .newsletter .divider { background: rgba(255,255,255,0.4); margin-inline: auto; }
 #newsletter-subtitle { max-width: 480px; margin-inline: auto; }
 
+/* Lighter variant for the sitewide footer signup, so pages that already
+   have a terra-coloured CTA (e.g. shop.html's commission band) don't end
+   up with two identical-looking promotional blocks back to back. */
+.newsletter--soft { background: var(--bg-soft); color: var(--text); }
+.newsletter--soft h2, .newsletter--soft p { color: var(--text); }
+.newsletter--soft .section-header__label { color: var(--terra); }
+.newsletter--soft .divider { background: var(--terra); margin-inline: auto; }
+.newsletter--soft .newsletter__note { color: var(--text-muted); }
+
 .newsletter__form {
   display: flex;
   max-width: 480px;
