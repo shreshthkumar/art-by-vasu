@@ -2,7 +2,7 @@ backend:
   name: github
   repo: shreshthkumar/art-by-vasu
   branch: main
-  base_url: https://www.artvasu.com
+  base_url: https://artvasu.com
   auth_endpoint: api/auth
 
 media_folder: images
