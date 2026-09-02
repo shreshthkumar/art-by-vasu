@@ -2,7 +2,9 @@ backend:
   name: github
   repo: shreshthkumar/art-by-vasu
   branch: main
-  base_url: https://www.artvasu.com
+  # TODO: switch to https://www.artvasu.com once DNS cutover is complete,
+  # and create a matching GitHub OAuth App with that homepage/callback URL.
+  base_url: https://warm-bombolone-70f98d.netlify.app
   auth_endpoint: api/auth
 
 media_folder: images
