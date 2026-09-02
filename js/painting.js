@@ -230,8 +230,25 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   // Update page title and breadcrumb
-  document.title = `${painting.title} — Art Vasu`;
+  const pageTitle = `${painting.title} — Art Vasu`;
+  document.title = pageTitle;
   document.getElementById('breadcrumb-title').textContent = painting.title;
+
+  // Update canonical/OG/Twitter tags for this specific painting
+  const pageUrl = `${window.location.origin}/painting.html?id=${painting.id}`;
+  const shortDescription = `${painting.subtitle} — ${painting.size}, ${painting.medium}. £${painting.price}.`;
+  const socialImage = painting.image
+    ? new URL(painting.image, window.location.origin).href
+    : `${window.location.origin}/images/screenshot-2026-04-28-at-23.25.29.webp`;
+
+  document.getElementById('canonical-link')?.setAttribute('href', pageUrl);
+  document.getElementById('og-title')?.setAttribute('content', pageTitle);
+  document.getElementById('og-description')?.setAttribute('content', shortDescription);
+  document.getElementById('og-url')?.setAttribute('content', pageUrl);
+  document.getElementById('og-image')?.setAttribute('content', socialImage);
+  document.getElementById('twitter-title')?.setAttribute('content', pageTitle);
+  document.getElementById('twitter-description')?.setAttribute('content', shortDescription);
+  document.getElementById('twitter-image')?.setAttribute('content', socialImage);
 
   // Render product detail
   detail.innerHTML = buildProductDetail(painting);
