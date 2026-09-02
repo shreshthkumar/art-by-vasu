@@ -190,16 +190,47 @@ function showToast(message) {
   setTimeout(() => toast.remove(), 3000);
 }
 
-/* ─── NEWSLETTER FORM ────────────────────────────────────────── */
+/* ─── NEWSLETTER FORM ────────────────────────────────────────────
+   Submits to Web3Forms (same service/key as the contact form) so
+   sign-ups actually land in an inbox instead of vanishing. This is a
+   stopgap, not a real mailing list — see MARKETING-PLAN.md for the
+   plan to move to a proper list tool once volume justifies it. */
 function initNewsletter() {
   const form = document.querySelector('.newsletter__form');
-  form?.addEventListener('submit', e => {
+  form?.addEventListener('submit', async e => {
     e.preventDefault();
     const input = form.querySelector('.newsletter__input');
-    if (input?.value) {
-      showToast('You\'re on the list — thank you!');
-      input.value = '';
+    const email = input?.value.trim();
+    if (!email) return;
+
+    const submitBtn = form.querySelector('.newsletter__btn');
+    const originalText = submitBtn?.textContent;
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Joining…'; }
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: '5453a66e-244e-463a-84cb-039404a34187',
+          subject: 'New newsletter sign-up — artvasu.com',
+          from_name: 'Art Vasu Website',
+          email,
+          message: `New newsletter subscriber: ${email}`,
+        }),
+      });
+      const json = await res.json();
+      if (json.success) {
+        showToast('You\'re on the list — thank you!');
+        input.value = '';
+      } else {
+        showToast('Could not sign up right now — please try again.');
+      }
+    } catch {
+      showToast('Could not sign up right now — please try again.');
     }
+
+    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalText; }
   });
 }
 
