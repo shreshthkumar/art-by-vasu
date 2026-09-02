@@ -250,7 +250,7 @@
     // Story photo
     if (d.story_photo) {
       document.getElementById('story-photo-wrap').innerHTML =
-        `<img src="${d.story_photo}" alt="Studio portrait" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg)">`;
+        `<img src="${escapeHtml(d.story_photo)}" alt="Studio portrait" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg)">`;
     }
     // Process
     document.getElementById('process-subtitle').textContent = d.process_subtitle;
@@ -258,9 +258,9 @@
       document.getElementById('process-cards').innerHTML =
         d.process_cards.map(c => `
           <div class="process-card">
-            <div class="process-card__icon">${c.icon}</div>
-            <h3>${c.title}</h3>
-            <p>${c.text}</p>
+            <div class="process-card__icon">${escapeHtml(c.icon)}</div>
+            <h3>${escapeHtml(c.title)}</h3>
+            <p>${escapeHtml(c.text)}</p>
           </div>`).join('');
     }
     // Facts
@@ -268,8 +268,8 @@
       document.getElementById('facts-grid').innerHTML =
         d.facts.map(f => `
           <div class="fact-item">
-            <div class="fact-item__label">${f.label}</div>
-            <div class="fact-item__value">${f.value}</div>
+            <div class="fact-item__label">${escapeHtml(f.label)}</div>
+            <div class="fact-item__value">${escapeHtml(f.value)}</div>
           </div>`).join('');
     }
     // CTA

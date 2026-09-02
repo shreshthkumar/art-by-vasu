@@ -37,15 +37,15 @@ function buildPaintingCard(p) {
   const tags = [];
   if (p.new && p.available) tags.push(`<span class="tag tag--new">New</span>`);
   if (!p.available) tags.push(`<span class="tag tag--sold">Sold</span>`);
-  tags.push(`<span class="tag tag--collection">${p.collection}</span>`);
+  tags.push(`<span class="tag tag--collection">${escapeHtml(p.collection)}</span>`);
 
   const cartBtn = p.available
     ? `<button class="btn btn-teal painting-card__btn" onclick="handleAddToCart(${p.id})">Add to Cart</button>`
     : `<a href="contact.html?commission=${encodeURIComponent(p.title)}&collection=${encodeURIComponent(p.collection)}&size=${encodeURIComponent(p.size)}&medium=${encodeURIComponent(p.medium)}" class="btn btn-outline-teal painting-card__btn">Commission Similar</a>`;
 
   const imgEl = p.image
-    ? `<img src="${p.image}" alt="${p.title}" class="painting-card__img-photo" loading="lazy" decoding="async">`
-    : `<div class="painting-card__img-bg" style="background:${p.gradient}"></div>`;
+    ? `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.title)}" class="painting-card__img-photo" loading="lazy" decoding="async">`
+    : `<div class="painting-card__img-bg" style="background:${escapeHtml(p.gradient)}"></div>`;
 
   return `
     <div class="painting-card ${!p.available ? 'painting-card--sold' : ''}" data-id="${p.id}">
@@ -54,9 +54,9 @@ function buildPaintingCard(p) {
         <div class="painting-card__tags">${tags.join('')}</div>
       </div>
       <div class="painting-card__body">
-        <a href="painting.html?id=${p.id}" class="painting-card__title-link">${p.title}</a>
-        <div class="painting-card__meta">${p.size} · ${p.medium}</div>
-        <div class="painting-card__inspiration">${p.inspiration}</div>
+        <a href="painting.html?id=${p.id}" class="painting-card__title-link">${escapeHtml(p.title)}</a>
+        <div class="painting-card__meta">${escapeHtml(p.size)} · ${escapeHtml(p.medium)}</div>
+        <div class="painting-card__inspiration">${escapeHtml(p.inspiration)}</div>
         <div class="painting-card__footer">
           <div class="painting-card__price">£${p.price}</div>
           ${cartBtn}

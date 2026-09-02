@@ -2,6 +2,18 @@
    MAIN.JS — Navigation, Cart, Toast Notifications
    ============================================================ */
 
+/* ─── HTML ESCAPING ──────────────────────────────────────────────
+   Content from data/*.json is CMS-editable and gets injected via
+   innerHTML throughout the site. Escape it so a compromised or
+   malicious CMS edit can't inject a script into every visitor's page. */
+function escapeHtml(value) {
+  if (value === null || value === undefined) return '';
+  return String(value).replace(/[&<>"']/g, ch => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+  }[ch]));
+}
+window.escapeHtml = escapeHtml;
+
 /* ─── NAVIGATION ─────────────────────────────────────────────── */
 function initNav() {
   const nav = document.querySelector('.nav');
@@ -105,12 +117,12 @@ function renderCartItems() {
     <div class="cart-item" data-id="${item.id}">
       <div class="cart-item__img">
         ${item.image
-            ? `<img src="${item.image}" alt="${item.title}" style="width:100%;height:100%;object-fit:cover;">`
-            : `<div class="cart-item__img-bg" style="background:${item.gradient}"></div>`}
+            ? `<img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" style="width:100%;height:100%;object-fit:cover;">`
+            : `<div class="cart-item__img-bg" style="background:${escapeHtml(item.gradient)}"></div>`}
       </div>
       <div class="cart-item__info">
-        <div class="cart-item__name">${item.title}</div>
-        <div class="cart-item__meta">${item.size} · ${item.medium}</div>
+        <div class="cart-item__name">${escapeHtml(item.title)}</div>
+        <div class="cart-item__meta">${escapeHtml(item.size)} · ${escapeHtml(item.medium)}</div>
         <span class="cart-item__remove" data-id="${item.id}">Remove</span>
       </div>
       <div class="cart-item__price">£${item.price}</div>

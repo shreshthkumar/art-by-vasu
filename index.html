@@ -307,11 +307,11 @@
         const tags = [];
         if (p.new && p.available) tags.push(`<span class="tag tag--new">New</span>`);
         if (!p.available) tags.push(`<span class="tag tag--sold">Sold</span>`);
-        tags.push(`<span class="tag tag--collection">${p.collection}</span>`);
+        tags.push(`<span class="tag tag--collection">${escapeHtml(p.collection)}</span>`);
 
         const imgEl = p.image
-          ? `<img src="${p.image}" alt="${p.title}" class="painting-card__img-photo" loading="lazy" decoding="async">`
-          : `<div class="painting-card__img-bg" style="background:${p.gradient}"></div>`;
+          ? `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.title)}" class="painting-card__img-photo" loading="lazy" decoding="async">`
+          : `<div class="painting-card__img-bg" style="background:${escapeHtml(p.gradient)}"></div>`;
 
         const cartBtn = p.available
           ? `<button class="btn btn-teal painting-card__btn" onclick="addToCart(${JSON.stringify(p).replace(/"/g,'&quot;')})">Add to Cart</button>`
@@ -324,9 +324,9 @@
               <div class="painting-card__tags">${tags.join('')}</div>
             </div>
             <div class="painting-card__body">
-              <a href="painting.html?id=${p.id}" class="painting-card__title-link">${p.title}</a>
-              <div class="painting-card__meta">${p.size} · ${p.medium}</div>
-              <div class="painting-card__inspiration">${p.inspiration}</div>
+              <a href="painting.html?id=${p.id}" class="painting-card__title-link">${escapeHtml(p.title)}</a>
+              <div class="painting-card__meta">${escapeHtml(p.size)} · ${escapeHtml(p.medium)}</div>
+              <div class="painting-card__inspiration">${escapeHtml(p.inspiration)}</div>
               <div class="painting-card__footer">
                 <div class="painting-card__price">£${p.price}</div>
                 ${cartBtn}
@@ -362,14 +362,14 @@
 
     grid.innerHTML = items.map(item => {
       const caption = item.caption
-        ? `<div class="instagram-item__caption">${item.caption}</div>` : '';
+        ? `<div class="instagram-item__caption">${escapeHtml(item.caption)}</div>` : '';
 
       if (item.type === 'video') {
         const thumb = item.thumbnail
-          ? `<img src="${item.thumbnail}" alt="${item.caption || 'Video'}" class="instagram-item__img" loading="lazy" decoding="async">`
+          ? `<img src="${escapeHtml(item.thumbnail)}" alt="${escapeHtml(item.caption || 'Video')}" class="instagram-item__img" loading="lazy" decoding="async">`
           : `<div class="instagram-item__bg" style="background:radial-gradient(circle,#4A7C7E,#2C2C2C)"></div>`;
         return `
-          <div class="instagram-item instagram-item--video" onclick="openVideoModal('${item.url}')">
+          <div class="instagram-item instagram-item--video" onclick="openVideoModal(${JSON.stringify(item.url).replace(/"/g,'&quot;')})">
             ${thumb}
             <div class="instagram-item__play-overlay">
               <div class="instagram-item__play-icon"></div>
@@ -380,7 +380,7 @@
 
       return `
         <div class="instagram-item">
-          <img src="${item.url}" alt="${item.caption || ''}" class="instagram-item__img" loading="lazy" decoding="async">
+          <img src="${escapeHtml(item.url)}" alt="${escapeHtml(item.caption || '')}" class="instagram-item__img" loading="lazy" decoding="async">
           ${caption}
         </div>`;
     }).join('');
@@ -418,7 +418,7 @@
     // Value strip
     if (d.value_strip) {
       document.getElementById('value-strip-inner').innerHTML =
-        d.value_strip.map(item => `<div class="value-item"><div class="value-item__dot"></div>${item}</div>`).join('');
+        d.value_strip.map(item => `<div class="value-item"><div class="value-item__dot"></div>${escapeHtml(item)}</div>`).join('');
     }
     // Featured section header
     document.getElementById('featured-label').textContent   = d.featured_label;
@@ -429,7 +429,7 @@
     document.getElementById('about-body-2').textContent  = d.about_body_2;
     if (d.about_photo) {
       document.getElementById('about-photo-wrap').innerHTML =
-        `<img src="${d.about_photo}" alt="The Artist" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg)" loading="lazy" decoding="async">`;
+        `<img src="${escapeHtml(d.about_photo)}" alt="The Artist" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg)" loading="lazy" decoding="async">`;
     }
     // Process strip
     if (d.process_steps) {
@@ -437,8 +437,8 @@
         d.process_steps.map((s, i) => `
           <div class="process-step">
             <div class="process-step__number">${String(i + 1).padStart(2, '0')}</div>
-            <h3>${s.title}</h3>
-            <p>${s.text}</p>
+            <h3>${escapeHtml(s.title)}</h3>
+            <p>${escapeHtml(s.text)}</p>
           </div>`).join('');
     }
     // Hero image (if set)
@@ -455,14 +455,14 @@
           const overlayHtml = p ? `
             <div class="hero__painting-overlay">
               <div class="hero__painting-overlay-info">
-                <span class="hero__painting-overlay-title">${p.title}</span>
+                <span class="hero__painting-overlay-title">${escapeHtml(p.title)}</span>
                 <span class="hero__painting-overlay-price">£${p.price}</span>
               </div>
               ${p.available
                 ? `<button class="btn btn-teal hero__painting-overlay-btn" onclick="addToCart(${JSON.stringify(p).replace(/"/g,'&quot;')})">Add to Cart</button>`
                 : `<a href="contact.html?commission=${encodeURIComponent(p.title)}&collection=${encodeURIComponent(p.collection)}&size=${encodeURIComponent(p.size)}&medium=${encodeURIComponent(p.medium)}" class="btn btn-teal hero__painting-overlay-btn">Commission This</a>`}
             </div>` : '';
-          heroWrap.innerHTML = `<img src="${d.hero_image}" alt="${d.hero_title}" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">${overlayHtml}`;
+          heroWrap.innerHTML = `<img src="${escapeHtml(d.hero_image)}" alt="${escapeHtml(d.hero_title)}" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">${overlayHtml}`;
         });
       }
     }
@@ -478,9 +478,9 @@
         d.testimonials.map(t => `
           <div class="testimonial">
             <div class="testimonial__stars">★★★★★</div>
-            <p class="testimonial__text">${t.text}</p>
-            <div class="testimonial__author">${t.author}</div>
-            <div class="testimonial__location">${t.location}</div>
+            <p class="testimonial__text">${escapeHtml(t.text)}</p>
+            <div class="testimonial__author">${escapeHtml(t.author)}</div>
+            <div class="testimonial__location">${escapeHtml(t.location)}</div>
           </div>`).join('');
     }
     // Newsletter

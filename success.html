@@ -143,12 +143,12 @@
       <div class="cart-item">
         <div class="cart-item__img">
           ${item.image
-            ? `<img src="${item.image}" alt="${item.title}" style="width:100%;height:100%;object-fit:cover;">`
-            : `<div class="cart-item__img-bg" style="background:${item.gradient}"></div>`}
+            ? `<img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" style="width:100%;height:100%;object-fit:cover;">`
+            : `<div class="cart-item__img-bg" style="background:${escapeHtml(item.gradient)}"></div>`}
         </div>
         <div class="cart-item__info">
-          <div class="cart-item__name">${item.title}</div>
-          <div class="cart-item__meta">${item.size} · ${item.medium}</div>
+          <div class="cart-item__name">${escapeHtml(item.title)}</div>
+          <div class="cart-item__meta">${escapeHtml(item.size)} · ${escapeHtml(item.medium)}</div>
         </div>
         <div class="cart-item__price">£${item.price}</div>
       </div>`).join('');

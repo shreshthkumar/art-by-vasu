@@ -56,14 +56,14 @@ function buildGallery(painting) {
     return `
       <div class="carousel__viewport">
         <div class="carousel__track">
-          <div class="carousel__slide carousel__slide--gradient" style="background:${painting.gradient}"></div>
+          <div class="carousel__slide carousel__slide--gradient" style="background:${escapeHtml(painting.gradient)}"></div>
         </div>
       </div>`;
   }
 
   const slides = allImages.map((src, i) => `
     <div class="carousel__slide">
-      <img src="${src}" alt="${painting.title}" loading="${i === 0 ? 'eager' : 'lazy'}" decoding="async">
+      <img src="${escapeHtml(src)}" alt="${escapeHtml(painting.title)}" loading="${i === 0 ? 'eager' : 'lazy'}" decoding="async">
     </div>`).join('');
 
   const arrows = allImages.length > 1 ? `
@@ -96,7 +96,7 @@ function buildProductDetail(p) {
     : `<a href="${commissionUrl}" class="btn btn-outline-teal product-detail__cart-btn">Commission a Similar Piece</a>`;
 
   const colorTags = (p.colors || []).map(c =>
-    `<span class="product-color-tag">${c}</span>`).join('');
+    `<span class="product-color-tag">${escapeHtml(c)}</span>`).join('');
 
   return `
     <div class="product-detail__gallery">
@@ -104,41 +104,41 @@ function buildProductDetail(p) {
     </div>
     <div class="product-detail__info">
       <div class="product-detail__tags">
-        <span class="tag tag--collection">${p.collection}</span>
+        <span class="tag tag--collection">${escapeHtml(p.collection)}</span>
         ${statusTag}
       </div>
-      <h1 class="product-detail__title">${p.title}</h1>
-      <p class="product-detail__subtitle">${p.subtitle}</p>
+      <h1 class="product-detail__title">${escapeHtml(p.title)}</h1>
+      <p class="product-detail__subtitle">${escapeHtml(p.subtitle)}</p>
       <div class="product-detail__price">£${p.price}</div>
       <hr class="product-detail__divider">
       <div class="product-detail__meta-grid">
         <div class="product-detail__meta-item">
           <div class="product-detail__meta-label">Size</div>
-          <div class="product-detail__meta-value">${p.size}</div>
+          <div class="product-detail__meta-value">${escapeHtml(p.size)}</div>
         </div>
         <div class="product-detail__meta-item">
           <div class="product-detail__meta-label">Medium</div>
-          <div class="product-detail__meta-value">${p.medium}</div>
+          <div class="product-detail__meta-value">${escapeHtml(p.medium)}</div>
         </div>
       </div>
       ${colorTags ? `<div class="product-detail__colors">${colorTags}</div>` : ''}
       ${cartBtn}
       <hr class="product-detail__divider">
       <p class="product-detail__inspiration-label">About this painting</p>
-      <p class="product-detail__inspiration-text">${p.inspiration}</p>
+      <p class="product-detail__inspiration-text">${escapeHtml(p.inspiration)}</p>
     </div>`;
 }
 
 /* ─── RELATED PAINTINGS ───────────────────────────────────── */
 function buildRelatedCard(p) {
   const img = p.image
-    ? `<img src="${p.image}" alt="${p.title}" class="painting-card__img-photo" loading="lazy" decoding="async">`
-    : `<div class="painting-card__img-bg" style="background:${p.gradient}"></div>`;
+    ? `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.title)}" class="painting-card__img-photo" loading="lazy" decoding="async">`
+    : `<div class="painting-card__img-bg" style="background:${escapeHtml(p.gradient)}"></div>`;
 
   const tags = [];
   if (p.new && p.available) tags.push(`<span class="tag tag--new">New</span>`);
   if (!p.available) tags.push(`<span class="tag tag--sold">Sold</span>`);
-  tags.push(`<span class="tag tag--collection">${p.collection}</span>`);
+  tags.push(`<span class="tag tag--collection">${escapeHtml(p.collection)}</span>`);
 
   const cartBtn = p.available
     ? `<button class="btn btn-teal painting-card__btn" onclick="handleRelatedCart(${p.id})">Add to Cart</button>`
@@ -151,9 +151,9 @@ function buildRelatedCard(p) {
         <div class="painting-card__tags">${tags.join('')}</div>
       </div>
       <div class="painting-card__body">
-        <a href="painting.html?id=${p.id}" class="painting-card__title-link">${p.title}</a>
-        <div class="painting-card__meta">${p.size} · ${p.medium}</div>
-        <div class="painting-card__inspiration">${p.inspiration}</div>
+        <a href="painting.html?id=${p.id}" class="painting-card__title-link">${escapeHtml(p.title)}</a>
+        <div class="painting-card__meta">${escapeHtml(p.size)} · ${escapeHtml(p.medium)}</div>
+        <div class="painting-card__inspiration">${escapeHtml(p.inspiration)}</div>
         <div class="painting-card__footer">
           <div class="painting-card__price">£${p.price}</div>
           ${cartBtn}
@@ -191,7 +191,9 @@ function injectProductSchema(p) {
 
   const script = document.createElement('script');
   script.type = 'application/ld+json';
-  script.textContent = JSON.stringify(schema);
+  // JSON.stringify doesn't escape "</script>" — an unescaped occurrence in a
+  // title/description would close this tag early and let injected markup run.
+  script.textContent = JSON.stringify(schema).replace(/</g, '\\u003c');
   document.head.appendChild(script);
 }
 

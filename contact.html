@@ -272,8 +272,8 @@
       document.getElementById('faq-grid').innerHTML =
         d.faq.map(item => `
           <div class="faq-item">
-            <button class="faq-question">${item.question}<span class="faq-icon">+</span></button>
-            <div class="faq-answer"><div class="faq-answer-inner">${item.answer}</div></div>
+            <button class="faq-question">${escapeHtml(item.question)}<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">${escapeHtml(item.answer)}</div></div>
           </div>`).join('');
       initFaqAccordion();
     }
