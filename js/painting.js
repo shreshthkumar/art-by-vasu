@@ -132,7 +132,7 @@ function buildProductDetail(p) {
 /* ─── RELATED PAINTINGS ───────────────────────────────────── */
 function buildRelatedCard(p) {
   const img = p.image
-    ? `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.title)}" class="painting-card__img-photo" loading="lazy" decoding="async">`
+    ? `<img src="${escapeHtml(thumbSrc(p.image))}" srcset="${escapeHtml(thumbSrc(p.image))} 900w, ${escapeHtml(p.image)} 1600w" sizes="(max-width: 480px) 90vw, (max-width: 1024px) 45vw, 320px" alt="${escapeHtml(p.title)}" class="painting-card__img-photo" loading="lazy" decoding="async">`
     : `<div class="painting-card__img-bg" style="background:${escapeHtml(p.gradient)}"></div>`;
 
   const tags = [];

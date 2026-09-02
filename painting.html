@@ -28,7 +28,12 @@
   <meta name="twitter:image" id="twitter-image" content="https://artvasu.com/images/screenshot-2026-04-28-at-23.25.29.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600&display=swap" id="font-preload">
+  <script>
+    // Load the Google Fonts stylesheet without blocking first paint.
+    document.getElementById('font-preload').addEventListener('load', function() { this.rel = 'stylesheet'; });
+  </script>
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -101,24 +106,22 @@
   </div>
 </section>
 
-<!-- ─── NEWSLETTER ───────────────────────────────────────────── -->
-<section class="section--tight newsletter newsletter--soft">
-  <div class="container text-center">
-    <p class="section-header__label">Stay Connected</p>
-    <h2>Join the Circle</h2>
-    <div class="divider divider--center"></div>
-    <p style="max-width:480px;margin-inline:auto">New paintings, first access to limited works, and notes from the studio — straight to your inbox.</p>
-    <form class="newsletter__form">
-      <input type="email" class="newsletter__input" placeholder="your@email.com" required>
-      <button type="submit" class="newsletter__btn">Subscribe</button>
-    </form>
-    <p class="newsletter__note">No spam, ever. Unsubscribe anytime.</p>
-  </div>
-</section>
-
 <!-- ─── FOOTER ───────────────────────────────────────────────── -->
 <footer class="footer">
   <div class="container">
+    <div class="footer__newsletter">
+      <div class="footer__newsletter-text">
+        <h3>Join the Circle</h3>
+        <p>New paintings, first access to limited works, and notes from the studio — straight to your inbox.</p>
+      </div>
+      <div>
+        <form class="newsletter__form">
+          <input type="email" class="newsletter__input" placeholder="your@email.com" required>
+          <button type="submit" class="newsletter__btn">Subscribe</button>
+        </form>
+        <p class="newsletter__note">No spam, ever. Unsubscribe anytime.</p>
+      </div>
+    </div>
     <div class="footer__inner">
       <div>
         <div class="footer__brand-name"><span>Art Vasu</span></div>

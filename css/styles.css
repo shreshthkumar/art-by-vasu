@@ -626,15 +626,6 @@ p { max-width: 65ch; }
 .newsletter .divider { background: rgba(255,255,255,0.4); margin-inline: auto; }
 #newsletter-subtitle { max-width: 480px; margin-inline: auto; }
 
-/* Lighter variant for the sitewide footer signup, so pages that already
-   have a terra-coloured CTA (e.g. shop.html's commission band) don't end
-   up with two identical-looking promotional blocks back to back. */
-.newsletter--soft { background: var(--bg-soft); color: var(--text); }
-.newsletter--soft h2, .newsletter--soft p { color: var(--text); }
-.newsletter--soft .section-header__label { color: var(--terra); }
-.newsletter--soft .divider { background: var(--terra); margin-inline: auto; }
-.newsletter--soft .newsletter__note { color: var(--text-muted); }
-
 .newsletter__form {
   display: flex;
   max-width: 480px;
@@ -673,6 +664,28 @@ p { max-width: 65ch; }
   color: var(--white);
   padding-block: 3.5rem 2rem;
 }
+
+.footer__newsletter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+.footer__newsletter-text { max-width: 420px; }
+.footer__newsletter-text h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.4rem;
+}
+.footer__newsletter-text p { font-size: 0.88rem; color: rgba(255,255,255,0.6); }
+.footer__newsletter .newsletter__form { margin: 0; flex: 1; min-width: 280px; max-width: 420px; }
+.footer__newsletter .newsletter__note { text-align: left; margin-top: 0.6rem; color: rgba(255,255,255,0.55); }
 
 .footer__inner {
   display: grid;
@@ -1198,6 +1211,8 @@ p { max-width: 65ch; }
   .paintings-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.25rem; }
   .testimonials-grid { grid-template-columns: 1fr; }
   .footer__inner { grid-template-columns: 1fr; gap: 2rem; }
+  .footer__newsletter { flex-direction: column; align-items: flex-start; text-align: left; }
+  .footer__newsletter .newsletter__form { max-width: 100%; }
   /* Mobile filter toggle */
   .filter-toggle-btn {
     display: flex;

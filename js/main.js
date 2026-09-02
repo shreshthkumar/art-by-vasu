@@ -14,6 +14,19 @@ function escapeHtml(value) {
 }
 window.escapeHtml = escapeHtml;
 
+/* ─── RESPONSIVE IMAGES ──────────────────────────────────────────
+   Grid/card views only ever display images at ~300-450px, but the
+   source files are saved at full size (up to 1600px) for the product
+   detail page. thumbSrc() points at a pre-generated 600px-wide version
+   in images/thumbs/ with the same filename, so cards can use srcset to
+   avoid downloading full-resolution images just to shrink them in CSS. */
+function thumbSrc(imagePath) {
+  if (!imagePath) return imagePath;
+  const slash = imagePath.lastIndexOf('/');
+  return imagePath.slice(0, slash + 1) + 'thumbs/' + imagePath.slice(slash + 1);
+}
+window.thumbSrc = thumbSrc;
+
 /* ─── NAVIGATION ─────────────────────────────────────────────── */
 function initNav() {
   const nav = document.querySelector('.nav');
@@ -117,7 +130,7 @@ function renderCartItems() {
     <div class="cart-item" data-id="${item.id}">
       <div class="cart-item__img">
         ${item.image
-            ? `<img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" style="width:100%;height:100%;object-fit:cover;">`
+            ? `<img src="${escapeHtml(thumbSrc(item.image))}" alt="${escapeHtml(item.title)}" style="width:100%;height:100%;object-fit:cover;">`
             : `<div class="cart-item__img-bg" style="background:${escapeHtml(item.gradient)}"></div>`}
       </div>
       <div class="cart-item__info">
